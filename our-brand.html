@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AP Oil | Our Brand</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 pt-20 font-sans leading-relaxed">
+
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('navbar-placeholder').innerHTML = data)
+        .catch(console.error);
+    });
+  </script>
+
+  <!-- ✅ Hero Section (Your Original Style) -->
+  <section class="bg-cover bg-center shadow-lg rounded-lg pt-24 py-16 flex items-center justify-center"
+    style="background-image: url('Images/brand.png'); background-size: cover; background-position: center; background-color: rgba(0, 0, 0, 0.5); background-blend-mode: darken;">
+    <div class="bg-white bg-opacity-0 p-8 rounded text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Brand</h2>
+      <p class="text-xl md:text-xl text-white max-w-2xl mx-auto">
+        AP Oil transparently discloses our performance to our stakeholders.
+      </p>
+    </div>
+  </section>
+
+  <!-- Logo & Intro Philosophy -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col items-center">
+        <img src="Images/logo.png" alt="AP Oil Logo" class="max-w-xs mb-8" />
+        <p class="text-center max-w-3xl text-gray-700 text-lg mb-6">
+          The infinity icon symbolizes a world of unlimited possibilities. This reflects our philosophy of “All Possibilities” (AP), our aspiration to explore endless business opportunities in the oil industry and beyond.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Possibilities Sections -->
+  <section class="bg-gray-100 py-20">
+    <div class="container mx-auto px-6 space-y-16">
+
+      <!-- Possibility of People -->
+      <div class="flex flex-col-reverse md:flex-row items-center gap-10">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold mb-4">The Possibility of People</h2>
+          <p class="text-lg text-gray-700 mb-4">
+            Behind our AP Oil Brand is our heartware — the individuals who set wheels in motion. From management to partners, they are the ambassadors of our human-centric brand.
+          </p>
+          <p class="text-lg text-gray-700">
+            Empowered in spirit, body, and mind, we believe the power of human energy has no boundaries, making all things possible.
+          </p>
+        </div>
+        <div class="md:w-1/2">
+          <img src="Images/PeoplePossibility.jpg" alt="Possibility of People" class="rounded-lg shadow-md w-full" />
+        </div>
+      </div>
+
+      <!-- Possibility of Performance -->
+      <div class="flex flex-col md:flex-row items-center gap-10">
+        <div class="md:w-1/2">
+          <img src="Images/Performance.jpg" alt="Possibility of Performance" class="rounded-lg shadow-md w-full" />
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold mb-4">The Possibility of Performance</h2>
+          <p class="text-lg text-gray-700 mb-4">
+            The pursuit of optimum performance is central to our business. Through research, innovation, and development, we continually strive to achieve the best.
+          </p>
+          <p class="text-lg text-gray-700">
+            Performance drives our solutions and sustains the quality of life.
+          </p>
+        </div>
+      </div>
+
+      <!-- Possibility of Partnership -->
+      <div class="flex flex-col-reverse md:flex-row items-center gap-10">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold mb-4">The Possibility of Partnership</h2>
+          <p class="text-lg text-gray-700 mb-4">
+            We value the synergy of partnerships — working with clients, industry peers, and the environment. Through mutual exchange, we unlock greater possibilities together.
+          </p>
+          <p class="text-lg text-gray-700">
+            Our commitment to sustainability includes environmental stewardship for a cleaner future.
+          </p>
+        </div>
+        <div class="md:w-1/2">
+          <img src="Images/partnership.jpg" alt="Possibility of Partnership" class="rounded-lg shadow-md w-full" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Color Philosophy -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-6">Our Colors, Our Commitment</h2>
+      <p class="text-lg text-gray-700 max-w-4xl mx-auto text-center">
+        Marine blue signifies resources and strength. The evolving shades of blue represent our dynamic energy and progressive spirit. The green element reflects our commitment to environmental friendliness and corporate responsibility.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white">
+    <div class="container mx-auto py-6 text-center">
+      <p>&copy; 2025 AP Oil. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

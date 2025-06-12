@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homepage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="home bg-gray-50">
+
+  <!-- Navbar placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Load the navbar from external file -->
+  <script>
+    function loadNavbar() {
+      fetch('navbar.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Error loading navbar:', error);
+        });
+    }
+    document.addEventListener('DOMContentLoaded', loadNavbar);
+  </script>
+
+  <section class="text-gray-800 body-font overflow-hidden">
+    <div class="text-center lg:fw w-full">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-blue-900">
+        Motorcycle Engine Oils
+      </h1>
+      <div class="mb-8 leading-relaxed space-y-6 text-justify text-black">
+          <p>Our automotive lubricants for gasoline and gas engines are engineered to provide superior protection and performance for all types of vehicles. Available in a full range of formulations—from cost-effective mineral oils to balanced semi-synthetic blends and high-performance full synthetics—our products cater to every driving need and budget. Whether you're looking for basic engine protection or advanced wear resistance and fuel efficiency, our lubricants deliver clean engine operation, reduced friction, and long-lasting reliability. Trust our oils to keep your engine running smoothly, no matter the road ahead.</p>    
+      </div>
+      </div>
+    </div>
+    <div class="container px-5 py-24 mx-auto">
+      <div class="-my-8 divide-y-2 divide-gray-100">
+        <div class="py-8 flex flex-wrap md:flex-nowrap">
+          <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 mr-6">
+            <img class="object-cover object-center w-full h-full rounded border-2 border-black" src="Images/gold lf.jpg" alt="Sample Image">
+          </div>
+          <div class="md:flex-grow">
+            <h2 class="text-2xl font-medium text-blue-900 title-font mb-2">AP SUPER 2T</h2>
+            <ul class="list-disc list-outside pl-5 text-justify space-y-4 text-black">
+              <li>Premium quality two stroke motorcycle oil.</li>
+              <li>Recommended for two stroke motorcycles, scooters, ATV's and others requiring injection or pre-mixing lubricants</li>
+              <li>Can also be used in lawn mowers, chain saws</li>
+              <li>Available grades: JASO FC, FB, FA, API TC, TB and TA.</li>
+              <li>Packaging: 900ml, 1Ltr, 3.5Ltr, 5Ltr, 7.5Ltr, 10Ltr, 20Ltr, 26Ltr.</li>
+              <li>SAE grade: 5W-30, 5W-40</li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="container px-5 py-24 mx-auto">
+        <div class="-my-8 divide-y-2 divide-gray-100">
+          <div class="py-8 flex flex-wrap md:flex-nowrap">
+            <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 mr-6">
+              <img class="object-cover object-center w-full h-full rounded border-2 border-black" src="Images/gold lf.jpg" alt="Sample Image">
+            </div>
+            <div class="md:flex-grow">
+              <h2 class="text-2xl font-medium text-blue-900 title-font mb-2">AP SUPER 4T</h2>
+              <ul class="list-disc list-outside pl-5 text-justify space-y-4 text-black">
+                <li>Premium four stroke motorcycle oil.</li>
+                <li>Enhanced friction durability, optimized clutch performance.</li>
+                <li>Recommended for use in all types of four stroke motorcycle gasoline engines such as Honda, Yamaha, Suzuki, Kawasaki</li>
+                <li>Available grades: API SN, SM, SL, SJ, JASO MA, MA2, MB</li>
+                <li>Packaging: 900ml, 1Ltr, 3.5Ltr, 5Ltr, 7.5Ltr, 10Ltr, 20Ltr, 26Ltr.</li>
+                <li>SAE grade: 5W-30, 5W-40</li>
+              </ul>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-white bg-blue-900 body-font">
+    <div class="container mx-auto py-4 text-center">
+      <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

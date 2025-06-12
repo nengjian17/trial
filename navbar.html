@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Scroll Effect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth transition for navbar changes */
+        #navbar {
+            transition: all 0.3s ease; /* Smooth padding/transform transition */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+<header>
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 text-blue-900 py-4 transition-all duration-300 border-b-4 border-blue-500"
+        style="background-color: rgba(183, 255, 201, 0.459); border-color: #043858;">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="homepage.html" class="text-2xl font-semibold hover:text-indigo-300">
+                <img src="Images/logo1.png" alt="Your Company Logo" class="w-20 h-10 " />
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex space-x-6 items-center">
+                <li><a href="homepage.html" class="hover:text-[color:#0f948a] text-lg font-semibold">Home</a></li>
+                <!-- About Us Dropdown -->
+                <li class="relative group">
+                    <a href="#" class="hover:text-[color:#0f948a] text-lg inline-block px-2 py-2 font-semibold">About Us</a>
+                    <div class="absolute top-full left-0 hidden group-hover:block bg-white text-blue-900 rounded shadow-lg w-64 z-50">
+                        <a href="About.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our History</a>
+                        <a href="our-brand.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Brand</a>
+                        <a href="our-culture.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Culture</a>
+                        <a href="our-group.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Group</a>
+                        <a href="our-goals.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Goals</a>
+                    </div>
+                </li>
+
+                <!-- Products Dropdown -->
+                <li class="relative group">
+                    <a href="#" class="hover:text-[color:#0f948a] text-lg inline-block px-2 py-2 font-semibold">Products</a>
+                    <div class="absolute top-full left-0 hidden group-hover:block bg-white text-blue-900 rounded shadow-lg w-64 z-50">
+                        <a href="automotive-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Automotive Lubricants</a>
+                        <a href="industrial-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Industrial Lubricants</a>
+                        <a href="marine-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Marine Lubricants</a>
+                        <a href="grease.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Grease</a>
+                        <a href="industrial-specialty-oils.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Industrial Specialty Oils and Fluids</a>
+                    </div>
+                </li>
+
+                <!-- Investor Relations Dropdown -->
+                <li class="relative group">
+                    <a href="#" class="hover:text-[color:#0f948a] text-lg inline-block px-2 py-2 font-semibold">Investor Relations</a>
+                    <div class="absolute top-full left-0 hidden group-hover:block bg-white text-blue-900 rounded shadow-lg w-64 z-50">
+                        <a href="investors.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Investor Relations</a>
+                        <a href="BOD.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Board of Directors</a>
+                        <a href="Key exec.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Key Executives</a>
+                        <a href="annual-report.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Annual Reports</a>
+                    </div>
+                </li>
+                <li><a href="contact.html" class="hover:text-[color:#0f948a] text-lg font-semibold">Contact Us</a></li>
+            </ul>
+
+            <!-- Hamburger Menu -->
+            <div class="block lg:hidden">
+                <button id="navbar-toggle" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="navbar-menu" class="lg:hidden bg-blue-900 text-white hidden">
+            <ul class="space-y-4 py-4">
+                <li><a href="homepage.html" class="block text-lg px-4 py-2 hover:bg-indigo-500">Home</a></li>
+                <!-- About Us Dropdown (Mobile) -->
+                <li>
+                    <button id="mobile-about-toggle" class="w-full text-left px-4 py-2 text-lg hover:bg-indigo-500 focus:outline-none">
+                        About Us
+                    </button>
+                    <div id="mobile-about-menu" class="hidden pl-4">
+                        <a href="our-brand.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Brand</a>
+                        <a href="our-culture.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Culture</a>
+                        <a href="our-history.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our History</a>
+                        <a href="our-group.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Group</a>
+                        <a href="our-goals.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Goals</a>
+                    </div>
+                </li>
+
+                <!-- Products Dropdown (Mobile) -->
+                <li>
+                    <button id="mobile-products-toggle" class="w-full text-left px-4 py-2 text-lg hover:bg-indigo-500 focus:outline-none">
+                        Products
+                    </button>
+                    <div id="mobile-products-menu" class="hidden pl-4">
+                        <a href="automotive-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Automotive Lubricants</a>
+                        <a href="industrial-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Industrial Lubricants</a>
+                        <a href="marine-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Marine Lubricants</a>
+                        <a href="grease.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Grease</a>
+                        <a href="industrial-specialty-oils.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Industrial Specialty Oils and Fluids</a>
+                    </div>
+                </li>
+
+                <li><a href="investors.html" class="block text-lg px-4 py-2 hover:bg-indigo-500">Investor Relations</a></li>
+                <li><a href="contact.html" class="block text-lg px-4 py-2 hover:bg-indigo-500">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<script>
+    // Mobile menu toggle
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const navbarMenu = document.getElementById('navbar-menu');
+    navbarToggle.addEventListener('click', () => {
+        navbarMenu.classList.toggle('hidden');
+    });
+
+    // Mobile "About Us" dropdown toggle
+    const mobileAboutToggle = document.getElementById('mobile-about-toggle');
+    const mobileAboutMenu = document.getElementById('mobile-about-menu');
+    mobileAboutToggle.addEventListener('click', () => {
+        mobileAboutMenu.classList.toggle('hidden');
+    });
+
+    // Mobile "Products" dropdown toggle
+    const mobileProductsToggle = document.getElementById('mobile-products-toggle');
+    const mobileProductsMenu = document.getElementById('mobile-products-menu');
+    mobileProductsToggle.addEventListener('click', () => {
+        mobileProductsMenu.classList.toggle('hidden');
+    });
+
+    // Scroll effect for navbar
+    const navbar = document.getElementById('navbar');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function () {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Shrink navbar when scrolling down
+        if (currentScroll > lastScrollTop && currentScroll > 10) {
+            navbar.classList.add('py-2'); // Add small padding to shrink
+            navbar.classList.remove('py-4'); // Remove larger padding
+        } else if (currentScroll === 0) {
+            // Restore navbar size at top
+            navbar.classList.add('py-4');
+            navbar.classList.remove('py-2');
+        }
+
+        // Update the last scroll position
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+</script>
+
+</body>
+
+</html>

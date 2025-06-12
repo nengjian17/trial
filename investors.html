@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homepage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="home bg-gray-50">
+
+  <!-- Navbar placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Load the navbar from external file -->
+  <script>
+    function loadNavbar() {
+      fetch('navbar.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Error loading navbar:', error);
+        });
+    }
+    document.addEventListener('DOMContentLoaded', loadNavbar);
+    
+  </script>
+
+<!-- Hero Section with Video -->
+<section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+         
+      <div class="text-center lg:w-2/3 w-full">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+          	Investor Relations
+        </h1>
+        <div class="mb-8 leading-relaxed space-y-6 text-justify">
+            <p>The Company was incorporated in Singapore under the name of Huan Chew Oil Trading Pte Ltd on 24 December 1975. On 24 March 2001, it was converted into a public company and changed its name to AP Oil International Ltd.</p>
+            
+            <p>The Group is principally engaged in the manufacture of lubricating oils and fluids for industrial, automotive and marine applications. It is also engaged in the supply and trading of base oils and additives used in lubricant production.</p>
+            
+            <p>Through its subsidiary, AIM Chemical Industries (Pte) Ltd (AIM), the Group provides toll blending and contract manufacturing services for specialty chemicals. AIM also supplies and trades in chemicals.</p>
+            
+            <p>AP Oil was listed on the Singapore Stock Exchange in 2001 and upgraded to the Mainboard in 2003. Our Group is principally engaged in business of lubricants and specialty chemicals.</p>
+            
+            <p>The Group operates three manufacturing plants, two for manufacturing lubricants and one for manufacturing chemicals, in Singapore. One of its lubricant manufacturing plants has an oil terminal and a private jetty for loading and unloading of liquid cargo. The storage terminal and private jetty capable of berthing up to 15,000 tons of vessel was completed in March 2004.</p>
+            
+        </div>
+        <div class="flex justify-center">
+          <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+          <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-white bg-blue-900 body-font">
+    <div class="container mx-auto py-4 text-center">
+      <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+
+</body>
+</html>

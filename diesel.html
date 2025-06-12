@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lubricant Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+
+      background: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .product-card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .tags {
+      margin: 10px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #007BFF;
+      color: white;
+      padding: 3px 8px;
+      margin: 3px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .actions button,
+    .actions a {
+      margin: 5px;
+      padding: 8px 12px;
+      background: #333;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .actions a {
+      background: #28a745;
+    }
+
+    .actions button:hover,
+    .actions a:hover {
+      opacity: 0.9;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="home bg-gray-50 pt-20">
+
+  <!-- Navbar placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <section class="text-gray-800 body-font overflow-hidden">
+    <div class="text-center lg:fw w-full">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 px-20 pt-20 font-medium text-[color:#043858]">
+      Diesel Engine Oils
+      </h1>
+      <div class="mb-8 leading-relaxed space-y-6 text-justify text-black w-2/3 mx-auto">
+        <p>
+          Our automotive lubricants for gasoline and gas engines are engineered to provide superior protection and performance for all types of vehicles. Available in a full range of formulations—from cost-effective mineral oils to balanced semi-synthetic blends and high-performance full synthetics—our products cater to every driving need and budget. Whether you're looking for basic engine protection or advanced wear resistance and fuel efficiency, our lubricants deliver clean engine operation, reduced friction, and long-lasting reliability. Trust our oils to keep your engine running smoothly, no matter the road ahead.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Updated Product Grid with container -->
+  <div class="container mx-auto px-10">
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="Images/gold lf.jpg" alt="AP DIAMOND DX-J">
+        <h2>AP DIAMOND DX-J</h2>
+        <p>Fully Synthetic Supreme Diesel Engine Oil</p>
+        <div class="tags">
+          <span class="tag">Fully Synthetic</span>
+          <span class="tag">ISO VG 46</span>
+          <span class="tag">Zinc-Free</span>
+        </div>
+        <div class="actions">
+          <button onclick="openModal(
+            'AP DIAMOND DX-J', 
+            'Fully synthetic superior diesel engine oil. Complies with latest emission regulation standars of EURO IV, EURO V. Excellent wear protection, soot control and engine cleanliness, long oil drain interval. For use in latest diesel vehicles, including low emission engine with Exhaust Gas Recirculation(EGR)', 
+            'Performance level of API CJ-4/SM, CI-4 Plus, CI-4, CH-4, CG-4, Mack EO-O Premium plus(07) and EO-M plus, MB p228.31, Volvo VDS-3/4, ACEA E4-07, MAN M3277 and Cummins CES20081', 
+            '900ml, 1Ltr, 3.5Ltr, 5Ltr, 7.5Ltr, 10Ltr, 20Ltr, 26Ltr.',
+            '5W30,5W40')">Quick View</button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="Images/gold lf.jpg" alt="AP DIAMOND LA">
+        <h2>AP DIAMOND LA</h2>
+        <p>Fully Synthetic Low Saps Service Life High Performance Diesel Engine Oil</p>
+        <div class="tags">
+          <span class="tag">Fully Synthetic</span>
+          <span class="tag">ISO VG 46</span>
+          <span class="tag">Zinc-Free</span>
+        </div>
+        <div class="actions">
+          <button onclick="openModal(
+            'AP DIAMOND LA', 
+            'Synthetic, severe duty diesel engine oil specially designed for high output, low emission engines fitted with DPF (Diesel Engine Filter) and other exhaust after-treatment devices.', 
+            'Performance level of API CK-4, FA-4, CJ-4, ACEA E6-16, E9-16, E8-22, E11-22, JASO DH-2, MAN 3477, Cummins CES 20086, 20087, Detroit Diesel DDC93K222, Mack EOS-4.5, Renault RLD-3, MB 228.51.', 
+            '900ml, 1Ltr, 3.5Ltr, 5Ltr, 7.5Ltr, 10Ltr, 20Ltr, 26Ltr.',
+            '5W30,10W40')">Quick View</button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <img src="Images/gold lf.jpg" alt="AP DIAMOND LF">
+        <h2>AP DIAMOND LF</h2>
+        <p>Long-service Life High Performance Diesel Engine Oil</p>
+        <div class="tags">
+          <span class="tag">Fully Synthetic</span>
+          <span class="tag">ISO VG 46</span>
+          <span class="tag">Zinc-Free</span>
+        </div>
+        <div class="actions">
+          <button onclick="openModal(
+            'AP DIAMOND LF', 
+            'New generation synthetic blended high-performance heavy duty-diesel engine oil specially formulated to meet the latest emission targets for Europe, the Americans and Japan. This oil provides excellent wear protection, oil consumption and oxidation resistance.', 
+            'Performance level of API CK-4, CJ-4, ACEA E6-16, E9-16, E11-22, JASO DH-2, Volvo VDS4.5, MAN 3477, Cummins CES 20086, Detroit Diesel DDC93K222, Mack EOS-4.5, Renault RLD-3, MB 228.51.', 
+            '900ml, 1Ltr, 3.5Ltr, 5Ltr, 7.5Ltr, 10Ltr, 20Ltr, 26Ltr.',
+            '10W40')">Quick View</button>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <img src="Images/gold lf.jpg" alt="AP DIAMOND X-SUPER LUBE CJ-4">
+        <h2>AP DIAMOND X-SUPER LUBE CJ-4</h2>
+        <p>Latest Generation Heavy Duty Diesel Engine Oil</p>
+        <div class="tags">
+          <span class="tag">Fully Synthetic</span>
+          <span class="tag">ISO VG 46</span>
+          <span class="tag">Zinc-Free</span>
+        </div>
+        <div class="actions">
+          <button onclick="openModal(
+            'AP DIAMOND X-SUPER LUBE CJ-4', 
+            'Fully synthetic utmost superior gasoline and light duty diesel engine oil.Superior performance formulated for long service life. Rapidly flows to critical parts of engine, provides immediate protection from the time you start your engine.', 
+            'Performance level of MB p229.51, MB p229.31, ACEA A3/B3-08, ACEA A3/B4-08, ACEA A3/B5-08, ACEA C3-08, ACEA C2-08, BMW Longlife-04, Porsche, VW502 00/505 00, Renault, GM denox2 and API SP', 
+            '900ml, 1Ltr, 3.5Ltr, 5Ltr, 7.5Ltr, 10Ltr, 20Ltr, 26Ltr.',
+            '10W30,10W40,15W40')">Quick View</button>
+        </div>
+      </div>
+    </div> <!-- End of product-grid -->
+  </div> <!-- End of container wrapper -->
+
+  <!-- Modal -->
+  <div class="modal" id="quickViewModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2><strong id="modalTitle"></strong></h2>
+      <p><strong>Applications:</strong> <span id="modalApp"></span></p>
+      <p><strong>Performance:</strong> <span id="modalPer"></span></p>
+      <p><strong>Packaging:</strong> <span id="modalPack"></span></p>
+      <p><strong>SAE grade:</strong> <span id="modalSAE"></span></p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, application, performance, packaging, SAEgrade) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalApp').textContent = application;
+      document.getElementById('modalPer').textContent = performance;
+      document.getElementById('modalPack').textContent = packaging;
+      document.getElementById('modalSAE').textContent = SAEgrade;
+      document.getElementById('quickViewModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('quickViewModal').style.display = 'none';
+    }
+
+    function loadNavbar() {
+      fetch('navbar.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Error loading navbar:', error);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadNavbar);
+  </script>
+
+  <!-- Footer -->
+  <footer class="text-white bg-blue-900 body-font">
+    <div class="container mx-auto py-4 text-center">
+      <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

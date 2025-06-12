@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Board of Directors</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navbar placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Load the navbar from external file -->
+  <script>
+    function loadNavbar() {
+      fetch('navbar.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Error loading navbar:', error);
+        });
+    }
+    document.addEventListener('DOMContentLoaded', loadNavbar);
+    
+  </script>
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Board of Directors</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Meet the leadership team guiding our mission and strategic vision.</p>
+      </div>
+
+      <div class="flex flex-wrap -m-2">
+
+        <!-- Card: Dr Ho Leng Woon -->
+        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+          <div onclick="expandDetails('ho')" class="card h-auto flex flex-col border border-gray-200 p-4 rounded-lg cursor-pointer hover:shadow-md transition">
+            <div class="flex items-center mb-4">
+              <img src="Images/Dr Ho.jpg" alt="Dr Ho Leng Woon" class="w-16 h-16 bg-gray-100 object-cover rounded-full mr-4" />
+              <div>
+                <h3 class="text-gray-900 title-font font-semibold">Dr Ho Leng Woon</h3>
+                <p class="text-gray-500">Chairman</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Mdm Lau Woon Chan -->
+        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+          <div onclick="expandDetails('lau')" class="card h-auto flex flex-col border border-gray-200 p-4 rounded-lg cursor-pointer hover:shadow-md transition">
+            <div class="flex items-center mb-4">
+              <img src="Images/Mrs Ho.jpg" alt="Mdm Lau Woon Chan" class="w-16 h-16 bg-gray-100 object-cover rounded-full mr-4" />
+              <div>
+                <h3 class="text-gray-900 title-font font-semibold">Mdm Lau Woon Chan</h3>
+                <p class="text-gray-500">Director</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Mr Chang Kwok Wah -->
+        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+          <div onclick="expandDetails('chang')" class="card h-auto flex flex-col border border-gray-200 p-4 rounded-lg cursor-pointer hover:shadow-md transition">
+            <div class="flex items-center mb-4">
+              <img src="Images/Mr Chang.jpg" alt="Mr Chang Kwok Wah" class="w-16 h-16 bg-gray-100 object-cover rounded-full mr-4" />
+              <div>
+                <h3 class="text-gray-900 title-font font-semibold">Mr Chang Kwok Wah</h3>
+                <p class="text-gray-500">Director</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Mr Ho Chee Hon -->
+        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+          <div onclick="expandDetails('cheehon')" class="card h-auto flex flex-col border border-gray-200 p-4 rounded-lg cursor-pointer hover:shadow-md transition">
+            <div class="flex items-center mb-4">
+              <img src="Images/Cheehon.jpeg" alt="Mr Ho Chee Hon" class="w-16 h-16 bg-gray-100 object-cover rounded-full mr-4" />
+              <div>
+                <h3 class="text-gray-900 title-font font-semibold">Mr Ho Chee Hon</h3>
+                <p class="text-gray-500">Director, Group CEO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Mr Mah How Soon -->
+        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+          <div onclick="expandDetails('mah')" class="card h-auto flex flex-col border border-gray-200 p-4 rounded-lg cursor-pointer hover:shadow-md transition">
+            <div class="flex items-center mb-4">
+              <img src="Images/Mr Mah.jpeg" alt="Mr Mah How Soon" class="w-16 h-16 bg-gray-100 object-cover rounded-full mr-4" />
+              <div>
+                <h3 class="text-gray-900 title-font font-semibold">Mr Mah How Soon</h3>
+                <p class="text-gray-500">Independent Director</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Mr Wan Kum Tho -->
+        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+          <div onclick="expandDetails('wan')" class="card h-auto flex flex-col border border-gray-200 p-4 rounded-lg cursor-pointer hover:shadow-md transition">
+            <div class="flex items-center mb-4">
+              <img src="Images/Mr Wan.jpeg" alt="Mr Wan Kum Tho" class="w-16 h-16 bg-gray-100 object-cover rounded-full mr-4" />
+              <div>
+                <h3 class="text-gray-900 title-font font-semibold">Mr Wan Kum Tho</h3>
+                <p class="text-gray-500">Independent Director</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Detail Panel -->
+  <div id="detail-panel" class="hidden fixed inset-0 bg-white bg-opacity-95 z-50 p-8 overflow-y-auto transition-all duration-500">
+    <button onclick="closeDetails()" class="text-gray-600 hover:text-black text-sm float-right">✕ Close</button>
+    <div id="detail-content" class="mt-8 max-w-3xl mx-auto text-center">
+      <!-- Dynamic content inserted here -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-white bg-blue-900 body-font">
+    <div class="container mx-auto py-4 text-center">
+      <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const profiles = {
+        ho: {
+  name: "Dr Ho Leng Woon",
+  role: "Chairman",
+  image: "Images/Dr Ho.jpg",
+  description: `
+    <p class="mb-4 text-justify">	Dr Ho had been Chairman and Managing Director since 1983. He handed over the CEO portfolio to Mr Ho Chee Hon in May 2015 and remains Executive Chairman of the Group. Apart from masterminding the Group’s corporate policy, enterprise direction and strategy, he also oversees R&D in lubricant sector. Dr Ho is also Chairman of AP Saigon Petro JSC, AP Oil Shanghai and AP Oil (Chongqing).</p>
+    <p class="mb-4 text-justify">He holds a B. A. (Hons 1st Class) degree from Nanyang University, a PhD degree from the University of Hull, England and a diploma in Management Studies from Graduate School of Business, University of Chicago. Before joining the Company in August 1981, as a scholar, he was bonded to serve Singapore Government in the Public Utilities Board for 5 years and left as a Senior Hydrologist.</p>
+    <p class="mb-4 text-justify">As an active participant in community services and charitable activities for more than four decades. Dr Ho had been on the management boards of Anglican High School, The Chinese High School, Hwa Chong Institution and Hwa Chong International School. He has also served as President of St John Brigade (Zone 2), Honorary Chairman of Sian Chay Medical Institution, Honorary Consul of the Republic of Djibouti in Singapore, Founding Chairman of Asian Lubricants Industry Association (ALIA).</p>
+  `},
+      lau: {
+        name: "Mdm Lau Woon Chan",
+        role: "Director",
+        image: "Images/Mrs Ho.jpg",
+        description: `
+    <p class="mb-4 text-justify">Mdm Lau is one of the founders of the Company (formerly known as Huan Chew Oil Trading Pte Ltd, established in 1975 and public listed in 2001). She is responsible for financial management and assists the Chairman in exploring and evaluating new business opportunities and shaping the Group’s policy and strategy. She is a director of the Group’s major subsidiaries namely, AP Oil Pte Ltd, A.I.M. Chemical Industries Pte Ltd, GB Chemicals Pte Ltd, etc. Mdm Lau graduated from Nanyang University with a Bachelor of Arts Degree. Before joining the Company, she worked in private firms and Banque IndoSuez (Singapore).</p>
+  `},
+      chang: {
+        name: "Mr Chang Kwok Wah",
+        role: "Director",
+        image: "Images/Mr Chang.jpg",
+        description: `
+    <p class="mb-4 text-justify">Mr Chang was appointed to the Board in 2004. He is Managing Director of the Group's subsidiary, A.I.M. Chemical Industries Pte Ltd. He plays a leading role in business development, sales, finance, production, and general administration for the subsidiary.</p>
+    <p class="mb-4 text-justify">He holds a Masters Degree in Business Administration (MBA) from Brunel University, U.K. and is an Associate Member of Chartered Secretaries, Australia.</p>
+  `},
+      cheehon: {
+        name: "Mr Ho Chee Hon",
+        role: "Director, Group CEO",
+        image: "Images/Cheehon.jpeg",
+        description: `
+        <p class="mb-4 text-justify">Mr Ho, joined the Group in 2005, was appointed to the Board in July 2009. He was promoted to Group Deputy CEO in September 2012 and Group CEO in May 2015. His responsibilities, apart from working with the Chairman in overall corporate direction, business policy and strategic planning, include overseeing day-to-day operation of the lubricants business.</p>
+        <p class="mb-4 text-justify">Mr Ho is a director of the Group’s subsidiaries and associated companies, namely AP Oil Pte Ltd, A.I.M. Chemical Pte Ltd, GB Chemicals Pte Ltd, Alpha Pacific Petroleum (S), AP (Vietnam) Holding, AP Saigon Petro JSC, AP Oil Shanghai, AP Oil (Chongqing), and Chongqing Zongshen Financial Leasing Company Limited.</p>
+        <p class="mb-4 text-justify">Before joining the Group, Mr Ho, a Bachelor of Laws (Honors) graduate from National University of Singapore and a Master of Laws (Taxation) from Washington University in St. Louis, USA, practised as a lawyer with Messrs Rodyk & Davidson.</p>
+  `},
+      mah: {
+        name: "Mr Mah How Soon",
+        role: "Independent Director",
+        image: "Images/Mr Mah.jpeg",
+        description: `
+        <p class="mb-4 text-justify">Mr Mah was appointed as an Independent Director on 4 January 2021. He is currently the Managing Director of RHT Capital Pte. Ltd. He has had many years of transactional and management experience in corporate finance projects with several financial institutions and boutique advisory firms. He has played a key role in advising companies from many industries and countries on a wide range of transactions relating to equity capital markets, and mergers and acquisitions.</p>
+        <p class="mb-4 text-justify">He is currently an Independent Director of Clearbridge Health Limited. His past directorships include Katrina Group Ltd. and 800 Super Holdings Limited.</p>
+        <p class="mb-4 text-justify">Mr Mah graduated with a Bachelor of Accountancy with honours from Nanyang Business School, and a Master of Business Administration from The University of Chicago Booth School of Business. He is a Chartered Accountant (Singapore) and a Chartered Financial Analyst.</p>
+  `},
+      wan: {
+        name: "Mr Wan Kum Tho",
+        role: "Independent Director",
+        image: "Images/Mr Wan.jpeg",
+        description: `
+        <p class="mb-4 text-justify">Mr Wan was appointed as an Independent Director on 4 January 2021. He is currently the Managing Director, Investment, APAC of Singtel Innov8 Private Ltd, with venture capital, private equity and operational experience, in corporate finance and restructuring projects.</p>
+        <p class="mb-4 text-justify">Currently, an Independent Director of Tat Hong Equipment Service Co. Ltd and Nanofilm Technologies International Limited, he is also an Adjunct Associate Professor at the School of Business at National University of Singapore. He graduated from National University of Singapore with Bachelor of Business Administration (Honours).</p>
+  `}
+    };
+
+    function expandDetails(key) {
+      const panel = document.getElementById("detail-panel");
+      const content = document.getElementById("detail-content");
+      const person = profiles[key];
+
+      content.innerHTML = `
+        <img src="${person.image}" alt="${person.name}" class="w-24 h-24 rounded-full mx-auto mb-4">
+        <h2 class="text-2xl font-bold text-gray-900">${person.name}</h2>
+        <p class="text-gray-500 mb-4">${person.role}</p>
+        <p class="text-gray-700 text-left max-w-xl mx-auto">${person.description}</p>
+      `;
+      panel.classList.remove("hidden");
+    }
+
+    function closeDetails() {
+      document.getElementById("detail-panel").classList.add("hidden");
+    }
+  </script>
+
+</body>
+</html>

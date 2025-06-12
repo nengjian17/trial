@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Your Company</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* For navbar scroll shrinking */
+    #navbar.py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .transition-all {
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body class="home bg-gray-50 pt-20">
+
+  <!-- Shared Navbar -->
+  <div id="navbar-placeh
+  older"></div>
+
+  <!-- Hero Section -->
+  <section 
+    class="main_report bg-cover bg-center shadow-lg rounded-lg py-16 flex items-center justify-center" 
+    style="background-image: url('Images/time.jpg'); background-size: cover; background-position: center; background-color: rgba(0, 0, 0, 0.5); background-blend-mode: darken;"
+  >
+    <div class="bg-white bg-opacity-0 p-8 rounded">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Our History</h2>
+      <p class="text-3xl md:text-xl text-white mb-6 text-center">AP Oil transparently discloses our performance to our stakeholders.</p>
+    </div>
+  </section>
+
+  <!-- Hero Section with Video -->
+  <section class="text-black-600 body-font">
+    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+        <video class="w-full max-w-md mb-10 rounded shadow-lg" autoplay muted loop controls>
+            <source src="Images/Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>          
+      <div class="text-center lg:w-2/3 w-full">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-blue-900">
+          Our History
+        </h1>
+        <div class="mb-8 leading-relaxed space-y-6 text-justify ">
+            <p>AP Oil International Limited, formerly known as Huan Chew Oil Trading Pte Ltd, was incorporated in 1975 as a lubricant distributor. We ventured into manufacturing in 1981 and set up the first Singaporean-owned lubricant plant in the Republic.</p>
+            
+            <p>A milestone was reached in 1988 with the establishment of our second lube plant, Alpha Pacific Petroleum (S) Pte Ltd. This wholly-owned subsidiary has a private jetty capable of berthing vessels of up to 3,000 metric tonnes and a storage terminal with a total capacity of about 6,000 metric tonnes.</p>
+            
+            <p>We acquired A.I.M Chemical Industries Pte Ltd in 2000 to expand our business into specialty chemicals. This wholly-owned subsidiary operates a chemical blending plant providing toll-blending and contract manufacturing services mainly for multi-national companies.</p>
+            
+            <p>AP Oil was listed on the Singapore Stock Exchange in 2001 and upgraded to the Mainboard in 2003. Our Group is principally engaged in business of lubricants and specialty chemicals.</p>
+            
+            <p>We operate 6 manufacturing plants, 3 for the manufacturing of lubricants and 2 for specialty chemicals. Two of our lubricants plants are equipped with terminals and a private jetty.</p>
+            
+            <p>Our products are marketed in some 20 countries and regions namely Singapore, Indonesia, Malaysia, Thailand, Vietnam, Myanmar, Cambodia, Philippines, Bangladesh, Nepal, China, Taiwan, Hong Kong, Japan, Fiji and Middle East countries, etc.</p>
+        </div>
+        <div class="flex justify-center">
+          <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+          <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Script to load navbar.html -->
+  <script>
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        const placeholder = document.getElementById('navbar-placeholder');
+        placeholder.innerHTML = data;
+
+        // Re-run scripts inside the loaded navbar
+        const scripts = placeholder.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      })
+      .catch(error => {
+        console.error('❌ Failed to load navbar:', error);
+      });
+  </script>
+
+  <!-- Optional: Navbar scroll shrinking logic -->
+  <script>
+    // This runs after the navbar is loaded, so it’s safe to delay
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      if (!navbar) return;
+
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll > 0) {
+        navbar.classList.add('py-2');
+      } else {
+        navbar.classList.remove('py-2');
+      }
+    });
+  </script>
+</body>
+</html>

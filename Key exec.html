@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Key Executives</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navbar placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Load the navbar from external file -->
+  <script>
+    function loadNavbar() {
+      fetch('navbar.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Error loading navbar:', error);
+        });
+    }
+    document.addEventListener('DOMContentLoaded', loadNavbar);
+    
+  </script>
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">	Key Executives</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Meet the leadership team guiding our mission and strategic vision.</p>
+      </div>
+
+      <div class="flex flex-wrap -m-2">
+
+        <!-- Card: Mr Chang Kwok Wah -->
+        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+          <div onclick="expandDetails('chang')" class="card h-auto flex flex-col border border-gray-200 p-4 rounded-lg cursor-pointer hover:shadow-md transition">
+            <div class="flex items-center mb-4">
+              <img src="Images/Mr Chang.jpg" alt="Mr Chang Kwok Wah" class="w-16 h-16 bg-gray-100 object-cover rounded-full mr-4" />
+              <div>
+                <h3 class="text-gray-900 title-font font-semibold">Mr Chang Kwok Wah</h3>
+                <p class="text-gray-500">Managing Director</p>
+                <p class="text-gray-500">A.I.M. Chemical Industries Pte Ltd</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Mr Alphonsus Chua -->
+        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+          <div onclick="expandDetails('alphonsus')" class="card h-auto flex flex-col border border-gray-200 p-4 rounded-lg cursor-pointer hover:shadow-md transition">
+            <div class="flex items-center mb-4">
+              <img src="Images/alphonsus.png" alt="Mr Alphonsus Chua" class="w-16 h-16 bg-gray-100 object-cover rounded-full mr-4" />
+              <div>
+                <h3 class="text-gray-900 title-font font-semibold">Mr Alphonsus Chua</h3>
+                <p class="text-gray-500">Managing Director</p>
+                <p class="text-gray-500">GB Chemicals Pte Ltd</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Mr Ewe Tuck Foong  -->
+        <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+          <div onclick="expandDetails('CFO')" class="card h-auto flex flex-col border border-gray-200 p-4 rounded-lg cursor-pointer hover:shadow-md transition">
+            <div class="flex items-center mb-4">
+              <img src="Images/CFO.jpeg" alt="Mr Ewe Tuck Foong " class="w-16 h-16 bg-gray-100 object-cover rounded-full mr-4" />
+              <div>
+                <h3 class="text-gray-900 title-font font-semibold">Mr Ewe Tuck Foong </h3>
+                <p class="text-gray-500">Chief Financial Officer</p>
+                <p class="text-gray-500">AP Oil International Limited</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detail Panel -->
+  <div id="detail-panel" class="hidden fixed inset-0 bg-white bg-opacity-95 z-50 p-8 overflow-y-auto transition-all duration-500">
+    <button onclick="closeDetails()" class="text-gray-600 hover:text-black text-sm float-right">✕ Close</button>
+    <div id="detail-content" class="mt-8 max-w-3xl mx-auto text-center">
+      <!-- Dynamic content inserted here -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-white bg-blue-900 body-font">
+    <div class="container mx-auto py-4 text-center">
+      <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const profiles = {
+        chang: {
+  name: "Mr Chang Kwok Wah",
+  role: "Managing Director",
+  image: "Images/Mr Chang.jpg",
+  description: `
+    <p class="mb-4 text-justify">A.I.M. Chemical Industries Pte Ltd was established in 1976. Mr Chang joined in 1983 and appointed as Managing Director since 1992. In 2001, A.I.M. Chemical became the Group's wholly-owned subsidiary. Mr Chang has continued to serve as Managing Director taking leadership role in business development, sales, finance, production, and general administration for the subsidiary.</p>
+    <p class="mb-4 text-justify">He holds a Masters Degree in Business Administration from Brunel University, United Kingdom.</p>
+  `},
+      alphonsus: {
+        name: "Mr Alphonsus Chua",
+        role: "Managing Director",
+        image: "Images/alphonsus.png",
+        description: `
+    <p class="mb-4 text-justify">Mr Chua founded GB Chemicals in 1996. GB Chemicals was later acquired by the Group in 2004. He is responsible for the Company's overall management, planning and daily business activities. He also oversees the business development and key accounts.</p>
+    <p class="mb-4 text-justify">Mr Chua has over 40 years of experience in the specialty chemical industry. He was previously the Regional Manager for Gibson Chemicals, an Australian public listed company for 10 years.</p>
+  `},
+      CFO: {
+        name: "Mr Ewe Tuck Foong",
+        role: "CFO",
+        image: "Images/CFO.png",
+        description: `
+    <p class="mb-4 text-justify">Mr Ewe joined the Group as Chief Financial Officer in October 2024. He has oversight of financial and management reporting, internal controls, treasury, tax, regulatory compliance, investment projects, financial systems and corporate secretariat.</p>
+    <p class="mb-4 text-justify">Mr Ewe previously held CFO positions in Clean Earth Technologies Ltd, a company seeking listing and listed companies in HPC Holdings Ltd and Wee Hur Holdings Ltd. He also held Financial Controller positions in various SMEs and MNCs. Mr Ewe currently is a CA(S) and a FCCA.</p>
+  `},
+    };
+
+    function expandDetails(key) {
+      const panel = document.getElementById("detail-panel");
+      const content = document.getElementById("detail-content");
+      const person = profiles[key];
+
+      content.innerHTML = `
+        <img src="${person.image}" alt="${person.name}" class="w-24 h-24 rounded-full mx-auto mb-4">
+        <h2 class="text-2xl font-bold text-gray-900">${person.name}</h2>
+        <p class="text-gray-500 mb-4">${person.role}</p>
+        <p class="text-gray-700 text-left max-w-xl mx-auto">${person.description}</p>
+      `;
+      panel.classList.remove("hidden");
+    }
+
+    function closeDetails() {
+      document.getElementById("detail-panel").classList.add("hidden");
+    }
+  </script>
+
+</body>
+</html>
