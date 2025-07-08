@@ -62,8 +62,8 @@
   </style>
 </head>
 
-<body class="home bg-blue-50 pt-20">
-
+<body class="home bg-white">
+  <header class="pt-16 pb-12">
   <!-- Navbar placeholder -->
   <div id="navbar-placeholder"></div>
 
@@ -83,30 +83,31 @@
   </script>
 
   <!-- Main Section with Slider on the Left and Blog Block on the Right -->
-  <div class="flex px-20 pt-8">
-    <!-- Image Slider Section (Left side) -->
-    <div class="slider-container w-[800px] h-[300px] mr-8">
+<section class="bg-gray-50 py-16 px-8">
+  <div class="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
+    
+    <!-- Image Slider Section -->
+    <div class="slider-container w-full lg:w-[800px] h-[300px] lg:mr-8 mb-8 lg:mb-0">
       <img src="Images/Automotive.png" class="slider-image opacity-100" />
       <img src="Images/Industrial.png" class="slider-image opacity-0" />
       <img src="Images/Marine.png" class="slider-image opacity-0" />
     </div>
 
-    <!-- Blog Block Section (Right side) -->
-    <div class="md:w-1/2 flex flex-col items-start w-[500px]">
-      <h2 class="sm:text-4xl text-4xl title-font font-extrabold text-blue-900 mt-2 mb-6">Who We Are</h2>
-      <p class="leading-relaxed mb-8">
-        AP Oil International Limited, formerly known as Huan Chew Oil Trading Pte Ltd, was incorporated in 1975 as a lubricant distributor. We ventured into manufacturing in 1981 and set up the first Singaporean-owned lubricant plant in the Republic.</p>
-      
-      <!-- Learn More Button -->
-      <div class="flex justify-start w-full">
-        <a href="About.html" class="inline-flex items-center px-6 py-3 mt-12 text-white bg-blue-900 hover:bg-indigo-600 rounded-lg text-sm font-medium transition duration-300">
-          Learn More
-        </a>
-      </div>
+    <!-- Who We Are Text Section -->
+    <div class="w-full lg:w-[500px]">
+      <h2 class="text-4xl font-extrabold text-blue-900 mb-6">Who We Are</h2>
+      <p class="text-gray-700 leading-relaxed mb-8">
+        AP Oil International Limited, formerly known as Huan Chew Oil Trading Pte Ltd, was incorporated in 1975 as a lubricant distributor. We ventured into manufacturing in 1981 and set up the first Singaporean-owned lubricant plant in the Republic.
+      </p>
+      <a href="About.html" class="inline-flex items-center px-6 py-3 text-white bg-blue-900 hover:bg-[#0f948a] rounded-lg text-sm font-medium transition duration-300">
+        Learn More
+      </a>
     </div>
   </div>
+</section>
+
 <div class="border-b border-gray-300"></div>
-  <section class="text-white-900 body-font bg-gray-100">
+  <section class="bg-white py-16 px-8">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap w-full mb-20">
         <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
@@ -156,8 +157,10 @@
       </div>
     </div>
   </section>
-  
-  <section class="text-black-600 body-font bg-blue-100">
+
+  <div class="border-b border-gray-200"></div>
+
+  <section class="bg-blue-50 py-16 px-8">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
         <h1 class="sm:text-4xl text-4xl title-font mb-2 text-blue-900 font-extrabold">Driven by Quality, Defined by Innovation</h1>
@@ -240,7 +243,7 @@
 
 
 <!-- Sustainability Report Section -->
-<section class="main_report bg-black py-16 flex items-center justify-center">
+<section class="main_report bg-black py-12">
   <div 
     class="bg-cover shadow-lg rounded-lg p-10 w-full max-w-6xl text-right fade-in"
     style="background-image: url('Images/Building.jpg');background-position:80% 50%; background-color: rgba(0,0,0,0.5); background-blend-mode: darken;">
@@ -258,8 +261,10 @@
 
   </div>
 </section>
+<section class="bg-gray-50 py-16 px-8">
+    
   <!-- Footer -->
-  <footer class="text-white bg-blue-900 body-font">
+  <footer class="bg-blue-900 text-white py-6">
     <div class="container mx-auto py-4 text-center">
       <p>&copy; AP Oil International Ltd. All Rights Reserved.</p>
     </div>
