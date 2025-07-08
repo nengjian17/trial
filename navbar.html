@@ -2,186 +2,162 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <style>
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-    .fade-in {
-      animation: fadeIn 2s ease-in-out;
-    }
-    .slider-container {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-    }
-    .slider-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1.5s ease-in-out;
-      z-index: 0;
-    }
-    .opacity-100 {
-      opacity: 1 !important;
-      z-index: 1;
-    }
-    .opacity-0 {
-      opacity: 0 !important;
-      z-index: 0;
-    }
-    .card {
-      transition: transform 0.3s ease-in-out;
-    }
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Scroll Effect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth transition for navbar changes */
+        #navbar {
+            transition: all 0.3s ease; /* Smooth padding/transform transition */
+        }
+    </style>
 </head>
 
-<body class="home bg-[#f0fdfa] text-[#043858]">
-  <header class="pt-16 pb-12">
-    <div id="navbar-placeholder"></div>
-    <script>
-      function loadNavbar() {
-        fetch('navbar.html')
-          .then(res => res.text())
-          .then(data => {
-            document.getElementById('navbar-placeholder').innerHTML = data;
-          })
-          .catch(error => {
-            console.error('Error loading navbar:', error);
-          });
-      }
-      document.addEventListener('DOMContentLoaded', loadNavbar);
-    </script>
+<body class="bg-gray-100">
 
-    <section class="bg-[#d0f4ea] py-16 px-8">
-      <div class="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto">
-        <div class="slider-container w-full lg:w-[800px] h-[300px] lg:mr-8 mb-8 lg:mb-0">
-          <img src="Images/Automotive.png" class="slider-image opacity-100" />
-          <img src="Images/Industrial.png" class="slider-image opacity-0" />
-          <img src="Images/Marine.png" class="slider-image opacity-0" />
-        </div>
-        <div class="w-full lg:w-[500px]">
-          <h2 class="text-4xl font-extrabold text-[#043858] mb-6">Who We Are</h2>
-          <p class="text-gray-700 leading-relaxed mb-8">
-            AP Oil International Limited, formerly known as Huan Chew Oil Trading Pte Ltd, was incorporated in 1975 as a lubricant distributor. We ventured into manufacturing in 1981 and set up the first Singaporean-owned lubricant plant in the Republic.
-          </p>
-          <a href="About.html" class="inline-flex items-center px-6 py-3 text-white bg-[#043858] hover:bg-[#0f948a] rounded-lg text-sm font-medium transition duration-300">
-            Learn More
-          </a>
-        </div>
-      </div>
-    </section>
+<header>
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 text-blue-900 py-4 transition-all duration-300 border-b-4 border-blue-500"
+        style="background-color: rgba(183, 255, 201, 0.459); border-color: #043858;">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-semibold hover:text-indigo-300">
+                <img src="Images/logo1.png" alt="Your Company Logo" class="w-20 h-10 " />
+            </a>
 
-    <div class="border-b border-gray-300"></div>
+            <!-- Desktop Menu -->
+            <ul class="hidden lg:flex space-x-6 items-center">
+                <li><a href="index.html" class="hover:text-[color:#0f948a] text-lg font-semibold">Home</a></li>
+                <!-- About Us Dropdown -->
+                <li class="relative group">
+                    <a href="#" class="hover:text-[color:#0f948a] text-lg inline-block px-2 py-2 font-semibold">About Us</a>
+                    <div class="absolute top-full left-0 hidden group-hover:block bg-white text-blue-900 rounded shadow-lg w-64 z-50">
+                        <a href="About.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our History</a>
+                        <a href="our-brand.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Brand</a>
+                        <a href="our-culture.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Culture</a>
+                        <a href="our-group.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Group</a>
+                        <a href="our-goals.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Goals</a>
+                    </div>
+                </li>
 
-    <section class="bg-white py-16 px-8">
-      <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap w-full mb-20">
-          <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-[#043858]">Our Brand</h1>
-            <div class="h-1 w-28 bg-[#0f948a] rounded"></div>
-          </div>
-          <p class="lg:w-1/2 w-full leading-relaxed text-black text-justify">
-            Over more than three decade’s effort, we have now entered the active global lube market and established our position as one of the leading lubricant and specialty chemical suppliers in the Asia Pacific region.
-          </p>
-        </div>
-        <div class="flex flex-wrap -m-4">
-          <div class="xl:w-1/3 md:w-1/2 p-4">
-            <div class="bg-grey-900 p-6 rounded-lg card">
-              <img class="h-40 rounded w-full object-cover object-center mb-6" src="Images/automotivelub.jpg" alt="content">
-              <h2 class="text-lg text-blue-900 font-medium title-font mb-4">Automotive Lubricants</h2>
-              <p class="leading-relaxed text-base">Protect your engine, reduce wear, and boost performance with our wide selection of automotive lubricants.</p>
-              <a href="automotive-lubricants.html" class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
+                <!-- Products Dropdown -->
+                <li class="relative group">
+                    <a href="#" class="hover:text-[color:#0f948a] text-lg inline-block px-2 py-2 font-semibold">Products</a>
+                    <div class="absolute top-full left-0 hidden group-hover:block bg-white text-blue-900 rounded shadow-lg w-64 z-50">
+                        <a href="automotive-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Automotive Lubricants</a>
+                        <a href="industrial-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Industrial Lubricants</a>
+                        <a href="marine-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Marine Lubricants</a>
+                        <a href="grease.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Grease</a>
+                        <a href="industrial-specialty-oils.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Industrial Specialty Oils and Fluids</a>
+                    </div>
+                </li>
+
+                <!-- Investor Relations Dropdown -->
+                <li class="relative group">
+                    <a href="#" class="hover:text-[color:#0f948a] text-lg inline-block px-2 py-2 font-semibold">Investor Relations</a>
+                    <div class="absolute top-full left-0 hidden group-hover:block bg-white text-blue-900 rounded shadow-lg w-64 z-50">
+                        <a href="investors.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Investor Relations</a>
+                        <a href="BOD.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Board of Directors</a>
+                        <a href="Key exec.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Key Executives</a>
+                        <a href="annual-report.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Annual Reports</a>
+                    </div>
+                </li>
+                <li><a href="contact.html" class="hover:text-[color:#0f948a] text-lg font-semibold">Contact Us</a></li>
+            </ul>
+
+            <!-- Hamburger Menu -->
+            <div class="block lg:hidden">
+                <button id="navbar-toggle" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
-          </div>
-          <div class="xl:w-1/3 md:w-1/2 p-4">
-            <div class="bg-gray-100 p-6 rounded-lg card">
-              <img class="h-40 rounded w-full object-cover object-center mb-6" src="Images/industriallub.jpg" alt="content">
-              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Industrial Lubricants</h2>
-              <p class="leading-relaxed text-base">Designed for heavy-duty environments, our industrial lubricants protect your machinery even under the toughest conditions.</p>
-              <a href="industrial-lubricants.html" class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="xl:w-1/3 md:w-1/2 p-4">
-            <div class="bg-gray-100 p-6 rounded-lg card">
-              <img class="h-40 rounded w-full object-cover object-center mb-6" src="Images/marinelub.png" alt="content">
-              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Marine Lubricants</h2>
-              <p class="leading-relaxed text-base">Maximize your vessel’s efficiency and longevity with lubricants designed specifically for marine environments.</p>
-              <a href="marine-lubricants.html" class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Quality Section -->
-    <section class="bg-blue-50 py-16 px-8">
-      <div class="container px-5 py-24 mx-auto text-center">
-        <h2 class="sm:text-4xl text-4xl title-font mb-4 text-[#043858] font-extrabold">Driven by Quality, Defined by Innovation</h2>
-        <p class="lg:w-1/2 mx-auto text-black-500 mb-12">We ensure consistent product excellence through certified quality systems, advanced R&D, and customer-driven innovation.</p>
-      </div>
-    </section>
+        <!-- Mobile Menu -->
+        <div id="navbar-menu" class="lg:hidden bg-blue-900 text-white hidden">
+            <ul class="space-y-4 py-4">
+                <li><a href="index.html" class="block text-lg px-4 py-2 hover:bg-indigo-500">Home</a></li>
+                <!-- About Us Dropdown (Mobile) -->
+                <li>
+                    <button id="mobile-about-toggle" class="w-full text-left px-4 py-2 text-lg hover:bg-indigo-500 focus:outline-none">
+                        About Us
+                    </button>
+                    <div id="mobile-about-menu" class="hidden pl-4">
+                        <a href="our-brand.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Brand</a>
+                        <a href="our-culture.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Culture</a>
+                        <a href="our-history.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our History</a>
+                        <a href="our-group.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Group</a>
+                        <a href="our-goals.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Goals</a>
+                    </div>
+                </li>
 
-    <!-- Report Section -->
-    <section class="main_report bg-black py-12">
-      <div class="bg-cover shadow-lg rounded-lg p-10 w-full max-w-6xl mx-auto text-right fade-in" style="background-image: url('Images/Building.jpg'); background-position:80% 50%; background-color: rgba(0,0,0,0.5); background-blend-mode: darken;">
-        <div class="bg-white bg-opacity-60 p-8 rounded">
-          <h2 class="text-3xl md:text-4xl font-bold text-[#043858] mb-6">Annual Report 2024</h2>
-          <p class="text-gray-800 text-lg mb-6">Ap Oil’s Annual Report, which details our financial<br>performance and key achievements, has been published.</p>
-          <a href="annual-report.html" class="inline-block px-8 py-3 text-white bg-[#043858] hover:bg-[#0f948a] rounded-lg transition duration-300 text-lg">Read More</a>
+                <!-- Products Dropdown (Mobile) -->
+                <li>
+                    <button id="mobile-products-toggle" class="w-full text-left px-4 py-2 text-lg hover:bg-indigo-500 focus:outline-none">
+                        Products
+                    </button>
+                    <div id="mobile-products-menu" class="hidden pl-4">
+                        <a href="automotive-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Automotive Lubricants</a>
+                        <a href="industrial-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Industrial Lubricants</a>
+                        <a href="marine-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Marine Lubricants</a>
+                        <a href="grease.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Grease</a>
+                        <a href="industrial-specialty-oils.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Industrial Specialty Oils and Fluids</a>
+                    </div>
+                </li>
+
+                <li><a href="investors.html" class="block text-lg px-4 py-2 hover:bg-indigo-500">Investor Relations</a></li>
+                <li><a href="contact.html" class="block text-lg px-4 py-2 hover:bg-indigo-500">Contact Us</a></li>
+            </ul>
         </div>
-      </div>
-    </section>
+    </nav>
+</header>
 
-    <!-- Footer -->
-    <footer class="bg-[#043858] text-white py-6">
-      <div class="container mx-auto py-4 text-center">
-        <p>&copy; AP Oil International Ltd. All Rights Reserved.</p>
-      </div>
-    </footer>
+<script>
+    // Mobile menu toggle
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const navbarMenu = document.getElementById('navbar-menu');
+    navbarToggle.addEventListener('click', () => {
+        navbarMenu.classList.toggle('hidden');
+    });
 
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const images = document.querySelectorAll('.slider-image');
-        let current = 0;
-        setInterval(() => {
-          images[current].classList.remove('opacity-100');
-          images[current].classList.add('opacity-0');
-          current = (current + 1) % images.length;
-          images[current].classList.remove('opacity-0');
-          images[current].classList.add('opacity-100');
-        }, 4000);
-      });
-    </script>
+    // Mobile "About Us" dropdown toggle
+    const mobileAboutToggle = document.getElementById('mobile-about-toggle');
+    const mobileAboutMenu = document.getElementById('mobile-about-menu');
+    mobileAboutToggle.addEventListener('click', () => {
+        mobileAboutMenu.classList.toggle('hidden');
+    });
+
+    // Mobile "Products" dropdown toggle
+    const mobileProductsToggle = document.getElementById('mobile-products-toggle');
+    const mobileProductsMenu = document.getElementById('mobile-products-menu');
+    mobileProductsToggle.addEventListener('click', () => {
+        mobileProductsMenu.classList.toggle('hidden');
+    });
+
+    // Scroll effect for navbar
+    const navbar = document.getElementById('navbar');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function () {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Shrink navbar when scrolling down
+        if (currentScroll > lastScrollTop && currentScroll > 10) {
+            navbar.classList.add('py-2'); // Add small padding to shrink
+            navbar.classList.remove('py-4'); // Remove larger padding
+        } else if (currentScroll === 0) {
+            // Restore navbar size at top
+            navbar.classList.add('py-4');
+            navbar.classList.remove('py-2');
+        }
+
+        // Update the last scroll position
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+</script>
+
 </body>
-</html>
+
+</html> 
