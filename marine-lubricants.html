@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Homepage</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  .card {
+    transition: transform 0.3s ease-in-out;
+  }
 
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  </style>
 </head>
 
 <body class="home bg-gray-50">
@@ -29,12 +38,11 @@
     
   </script>
 
-<section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-col text-center w-full mb-20">
-      <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Marine Lubricants</h2>
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Marine Lubricants</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+<section class="text-gray-900 body-font">
+  <div class="container px-5 pt-24 pb-8 mx-auto">
+    <div class="flex flex-col text-center w-full mb-12">
+      <h1 class="sm:text-4xl text-3xl font-extrabold title-font mb-6 text-blue-900">Marine Lubricants</h1>
+      <p class="lg:w-2/3 mx-auto leading-loose text-xl text-gray-700 text-justify mb-10">
         AP Oil provides a complete range of marine lubricants to meet the needs and challenges of the international maritime industry. Our marine lubricants are tested and accepted by major marine engine manufacturers such as MAN, MTU, CUMMINS, MACK and NMMA, ect. Back by our specialised technical team and the global logistic network, we are capable of delivering the right product to the right place at the right time to meet your needs.</p>
     </div>
     </div>
@@ -108,7 +116,7 @@
   <!-- Footer -->
   <footer class="text-white bg-blue-900 body-font">
     <div class="container mx-auto py-4 text-center">
-      <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+      <p>&copy; AP Oil International Ltd. All Rights Reserved.</p>
     </div>
   </footer>
 

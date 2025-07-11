@@ -1,196 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>AP Oil – Our History</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #f0f2f5;
-      margin: 0;
-    }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-    h2.section-title {
-      text-align: center;
-      padding: 40px 20px 10px;
-      font-size: 2rem;
-      color: #1e40af; /* blue-900 */
-    }
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-    .timeline {
-      position: relative;
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 0;
-      border-left: 3px solid #1e40af; /* blue-900 */
-    }
+main {
+  flex: 1;
+}
 
-    .timeline-item {
-      position: relative;
-      padding: 30px 20px 30px 40px;
-    }
+h2.section-title {
+  text-align: center;
+  padding: 40px 20px 10px;
+  font-size: 2rem;
+  color: #1e40af; /* blue-900 */
+}
 
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      background-color: #fff;
-      border: 3px solid #1e40af; /* blue-900 */
-      border-radius: 50%;
-      left: -10px; /* Adjusts the dot position to align with the vertical line */
-      top: 32px;
-      z-index: 2;
-      box-shadow: 0 0 0 4px #f0f2f5; /* subtle outline */
-    }
+.timeline-section {
+  background-color: #e0f2f1;
+  padding: 60px 20px 100px;
+  width: 100%;
+}
 
-    .timeline-content {
-      background: #fff;
-      padding: 20px;
-      border-radius: 6px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto; /* no top/bottom margin */
+  padding-left: 40px;
+  /* Clearfix and contain floats */
+  overflow: auto;
+}
 
-    .timeline-content h3 {
-      margin-top: 0;
-      color: #1e40af; /* blue-900 */
-    }
+.timeline::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-    .expand-btn {
-      display: inline-block;
-      margin-top: 10px;
-      color: #1e40af; /* blue-900 */
-      cursor: pointer;
-      font-size: 0.9em;
-      border: none;
-      background: none;
-      padding: 0;
-    }
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  padding-left: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
 
-    .expand-btn:focus {
-      outline: 2px dashed #1e40af; /* blue-900 */
-      outline-offset: 4px;
-    }
+.timeline-item:hover .timeline-content {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 20px 30px rgba(15, 148, 138, 0.2); /* teal */
+}
 
-    .extra-content {
-      display: none;
-      margin-top: 10px;
-    }
+.timeline-year {
+  position: absolute;
+  top: 5px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 10px 18px;
+  border-radius: 30px;
+  box-shadow: 0 2px 10px rgba(180, 83, 9, 0.4);
+  white-space: nowrap;
+  color: white;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
 
-    @media (max-width: 768px) {
-      .timeline-item {
-        padding-left: 50px;
-      }
-    }
+.timeline-content {
+  background: white;
+  padding: 22px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    footer {
-      background: #0c2958;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
+.timeline-content h3 {
+  margin-top: 0;
+  color: #0f766e; /* teal-700 */
+  font-weight: 700;
+}
+
+.timeline-content p {
+  color: #4b4b4b;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    padding-left: 0;
+  }
+  .timeline-item {
+    width: 45%;
+    margin-bottom: 70px;
+    padding-left: 0;
+  }
+  .timeline-item:nth-of-type(odd) {
+    float: left;
+    clear: both;
+    text-align: right;
+    padding-right: 60px;
+  }
+
+  .timeline-item:nth-of-type(odd) .timeline-year {
+    right: -90px;
+    left: auto;
+    background:  #0f948a;
+    box-shadow: 0 2px 10px rgba(15, 148, 138, 0.6);
+  }
+
+  .timeline-item:nth-of-type(odd) .timeline-content {
+    margin-left: auto;
+    margin-right: 0;
+    background: #fffbeb;
+  }
+
+  .timeline-item:nth-of-type(even) {
+    float: right;
+    clear: both;
+    text-align: left;
+    padding-left: 60px;
+  }
+
+  .timeline-item:nth-of-type(even) .timeline-year {
+    left: -90px; /* Position the year to the left of the content */
+    background: #5eead4;
+    color: #065f46;
+    box-shadow: 0 2px 10px rgba(94, 234, 212, 0.6);
+  }
+
+  .timeline-item:nth-of-type(even) .timeline-content {
+    margin-left: 0;
+    margin-right: auto;
+    background: #fff7cc;
+  }
+}
+
+@media (max-width: 767px) {
+  .timeline-item {
+    width: 100%;
+    float: none !important;
+    padding-left: 40px !important;
+    text-align: left !important;
+    margin-bottom: 40px;
+  }
+  .timeline-item .timeline-year {
+    left: -20px !important;
+    right: auto !important;
+    background: #fbbf24; /* amber base */
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.6);
+    color: #7c510a;
+  }
+  .timeline-item .timeline-content {
+    margin: 0;
+    background: #fffbeb !important; /* unify background on mobile */
+  }
+}
+
+footer {
+  background: #0c2958;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
   </style>
 </head>
 
 <body class="home bg-gray-50 pt-20">
-
   <!-- Shared Navbar -->
   <div id="navbar-placeholder"></div>
+  <script>
+    function loadNavbar() {
+      fetch('navbar.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Error loading navbar:', error);
+        });
+    }
+    document.addEventListener('DOMContentLoaded', loadNavbar);
+  </script>
 
-  <!-- Hero Section -->
-  <section 
-    class="main_report shadow-lg rounded-lg py-16 flex items-center justify-center"
-    style="background-image: url('Images/time.jpg'); background-size: cover; background-position: center; background-color: rgba(0, 0, 0, 0.5); background-blend-mode: darken;">
-    <div class="bg-white bg-opacity-0 p-8 rounded text-center">
-      <h1 class="text-4xl font-bold text-white mb-4">Our History</h1>
-      <p class="text-xl text-white">AP Oil transparently discloses our performance to our stakeholders.</p>
-    </div>
-  </section>
-
-  <!-- Video Section -->
-  <section class="text-black body-font">
-    <div class="container mx-auto flex px-5 py-16 items-center justify-center flex-col">
-      <video class="w-full max-w-2xl mb-10 rounded shadow-lg" autoplay muted loop playsinline controls>
-        <source src="Images/Video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>  
-    </div>
-  </section>
-
-  <h2 class="section-title">AP Oil – Our Journey</h2>
-
-  <!-- Timeline Section -->
-  <div class="timeline">
-
-    <!-- Timeline Items -->
-    <div class="timeline-item" data-aos="fade-up">
-      <div class="timeline-content">
-        <h3>1975 – Foundation</h3>
-        <p>Incorporated as Huan Chew Oil Trading Pte Ltd, distributing lubricants in Singapore.</p>
+  <main>
+    <!-- Hero Section -->
+    <section
+      class="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-center"
+      style="background-image: url('Images/time.jpg');"
+    >
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <div class="relative z-10 px-6">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Our History</h1>
+        <p class="text-xl md:text-2xl text-white">
+          From humble beginnings to global presence — explore the milestones that shaped AP Oil.
+        </p>
       </div>
-    </div>
+    </section>
 
-    <div class="timeline-item" data-aos="fade-up">
-      <div class="timeline-content">
-        <h3>1981 – Manufacturing Begins</h3>
-        <p>Launched the first Singaporean-owned lubricant manufacturing plant.</p>
+    <!-- Video Section -->
+    <section style="background-color: #e9f0f8; color: #333;" class="py-20">
+      <div class="max-w-5xl mx-auto text-center px-6">
+        <h2 class="text-4xl font-bold mb-4">Discover Our Journey</h2>
+        <p class="text-lg mb-10">
+          From humble beginnings to global operations, AP Oil’s story is one of resilience, innovation, and
+          vision.
+        </p>
+
+        <video class="w-full rounded-lg shadow-lg" autoplay muted loop playsinline controls>
+          <source src="Images/Video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <p class="text-base text-black mt-10 italic">
+          Scroll down to see how each chapter shaped who we are today.
+        </p>
       </div>
-    </div>
+    </section>
 
-    <div class="timeline-item" data-aos="fade-up">
-      <div class="timeline-content">
-        <h3>1988 – Second Plant & Jetty</h3>
-        <p>Established Alpha Pacific Petroleum with a 3,000 MT jetty and 6,000 MT storage terminal.</p>
-        <button class="expand-btn" onclick="toggleContent(this)" aria-expanded="false">+ More Details</button>
-        <div class="extra-content">
-          <p>This expansion greatly enhanced our logistics capacity and marine services.</p>
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+    <h2 class="section-title">AP Oil – Our Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-year">1975</div>
+        <div class="timeline-content">
+          <h3>Foundation</h3>
+          <p>
+            AP Oil International Limited was incorporated as Huan Chew Oil Trading Pte Ltd, starting as a
+            lubricant distributor in Singapore.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-year">1981</div>
+        <div class="timeline-content">
+          <h3>Manufacturing Begins</h3>
+          <p>
+            We expanded into manufacturing, establishing the first Singaporean-owned lubricant plant in the
+            Republic.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="timeline-year">1988</div>
+        <div class="timeline-content">
+          <h3>Second Plant &amp; Private Jetty</h3>
+          <p>
+            A major milestone with the founding of Alpha Pacific Petroleum (S) Pte Ltd, featuring a private
+            jetty capable of berthing vessels up to 3,000 metric tonnes and a storage terminal with 6,000 metric
+            tonnes capacity.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="timeline-year">2000</div>
+        <div class="timeline-content">
+          <h3>Specialty Chemicals Expansion</h3>
+          <p>
+            Acquired A.I.M Chemical Industries Pte Ltd, moving into specialty chemicals with a blending plant
+            offering toll-blending and contract manufacturing mainly for multinational companies.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+        <div class="timeline-year">2001</div>
+        <div class="timeline-content">
+          <h3>Public Listing</h3>
+          <p>AP Oil was listed on the Singapore Stock Exchange, marking a new growth chapter.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+        <div class="timeline-year">2003</div>
+        <div class="timeline-content">
+          <h3>Mainboard Upgrade</h3>
+          <p>
+            Upgraded to the SGX Mainboard, enhancing our corporate visibility and investor confidence.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
+        <div class="timeline-year">Today</div>
+        <div class="timeline-content">
+          <h3>Global Operations</h3>
+          <p>
+            Operating six manufacturing plants—three for lubricants (two with private jetties) and two for
+            specialty chemicals—our products reach over 20 countries across Asia and beyond, including
+            Indonesia, Malaysia, Thailand, China, Japan, and Middle East countries.
+          </p>
         </div>
       </div>
     </div>
-
-    <div class="timeline-item" data-aos="fade-up">
-      <div class="timeline-content">
-        <h3>2000 – Specialty Chemicals</h3>
-        <p>Acquired A.I.M Chemical Industries Pte Ltd to enter specialty chemical production.</p>
-        <button class="expand-btn" onclick="toggleContent(this)" aria-expanded="false">+ More Details</button>
-        <div class="extra-content">
-          <p>Provided toll-blending and contract manufacturing services for multinational companies.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item" data-aos="fade-up">
-      <div class="timeline-content">
-        <h3>2001 – Public Listing</h3>
-        <p>AP Oil was listed on the Singapore Stock Exchange, initiating a new growth era.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item" data-aos="fade-up">
-      <div class="timeline-content">
-        <h3>2003 – Mainboard Upgrade</h3>
-        <p>Upgraded to the SGX Mainboard, enhancing corporate visibility and investor confidence.</p>
-      </div>
-    </div>
-
-    <div class="timeline-item" data-aos="fade-up">
-      <div class="timeline-content">
-        <h3>Today – Global Operations</h3>
-        <p>We operate 6 manufacturing plants and export to over 20 countries worldwide.</p>
-        <button class="expand-btn" onclick="toggleContent(this)" aria-expanded="false">+ More Details</button>
-        <div class="extra-content">
-          <ul>
-            <li>3 lubricant plants (2 with private jetties)</li>
-            <li>2 specialty chemical facilities</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-  </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -222,7 +343,11 @@
   <!-- AOS Animations -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out',
+    });
 
     function toggleContent(button) {
       const content = button.nextElementSibling;
@@ -243,6 +368,5 @@
       navbar.classList.toggle('py-2', currentScroll > 0);
     });
   </script>
-
 </body>
 </html>

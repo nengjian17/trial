@@ -29,18 +29,21 @@
   </script>
 
   <!-- Hero Section -->
-  <!-- If your navbar is fixed (e.g. class="fixed top-0"), then this pt-24 ensures content is not hidden -->
-  <section 
-    class="main_report bg-cover bg-center shadow-lg rounded-lg pt-24 py-16 flex items-center justify-center"
-    style="background-image: url('Images/goals.jpg'); background-size: cover; background-position: center; background-color: rgba(0, 0, 0, 0.5); background-blend-mode: darken;"
-  >
-    <div class="bg-white bg-opacity-0 p-8 rounded">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Our Group</h2>
-      <p class="text-3xl md:text-xl text-white mb-6 text-center">
-        AP Oil transparently discloses our performance to our stakeholders.
-      </p>
-    </div>
-  </section>
+<section
+  class="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-center"
+  style="background-image: url('Images/brand.png');"
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 px-6 text-white text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Group</h1>
+    <p class="text-xl md:text-2xl">
+      Our group spans borders—delivering excellence across continents and industries.
+    </p>
+  </div>
+</section>
 
   <!-- Structure Section -->
   <main class="text-gray-600 body-font">
@@ -54,7 +57,7 @@
   <!-- Footer -->
   <footer class="text-white bg-blue-900 body-font">
     <div class="container mx-auto py-4 text-center">
-      <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+      <p>&copy; AP Oil International Ltd. All Rights Reserved.</p>
     </div>
   </footer>
 

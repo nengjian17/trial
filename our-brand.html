@@ -20,15 +20,21 @@
   </script>
 
   <!-- ✅ Hero Section (Your Original Style) -->
-  <section class="bg-cover bg-center shadow-lg rounded-lg pt-24 py-16 flex items-center justify-center"
-    style="background-image: url('Images/brand.png'); background-size: cover; background-position: center; background-color: rgba(0, 0, 0, 0.5); background-blend-mode: darken;">
-    <div class="bg-white bg-opacity-0 p-8 rounded text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Brand</h2>
-      <p class="text-xl md:text-xl text-white max-w-2xl mx-auto">
-        AP Oil transparently discloses our performance to our stakeholders.
-      </p>
-    </div>
-  </section>
+<section
+  class="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-center"
+  style="background-image: url('Images/brand.png');"
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 px-6 text-white text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Brand</h1>
+    <p class="text-xl md:text-2xl">
+      More than a brand—our promise to explore all possibilities.
+    </p>
+  </div>
+</section>
 
   <!-- Logo & Intro Philosophy -->
   <section class="py-16 bg-white">
@@ -98,19 +104,23 @@
   </section>
 
   <!-- Color Philosophy -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-6">Our Colors, Our Commitment</h2>
-      <p class="text-lg text-gray-700 max-w-4xl mx-auto text-center">
-        Marine blue signifies resources and strength. The evolving shades of blue represent our dynamic energy and progressive spirit. The green element reflects our commitment to environmental friendliness and corporate responsibility.
-      </p>
-    </div>
-  </section>
+<section class="py-20" style="background-color: #f5f9fc;">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-6">
+      <span class="text-[#043858]">Our Colors</span> <span class="text-[#0f948a]">& Our Commitment</span>
+    </h2>
+    <p class="text-lg text-[#043858] max-w-4xl mx-auto mb-10">
+            Marine blue signifies resources and strength. The evolving shades of blue represent our dynamic energy and progressive spirit. The green element reflects our commitment to environmental friendliness and corporate responsibility.
+    </p>
+  </div>
+</section>
+
+
 
   <!-- Footer -->
   <footer class="bg-blue-900 text-white">
     <div class="container mx-auto py-6 text-center">
-      <p>&copy; 2025 AP Oil. All Rights Reserved.</p>
+      <p>&copy; AP Oil International Ltd. All Rights Reserved.</p>
     </div>
   </footer>
 

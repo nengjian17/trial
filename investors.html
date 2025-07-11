@@ -3,17 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Homepage</title>
+  <title>Investor Relations | AP Oil</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+            /* Add this custom hover effect to your card */
+        .card {
+      transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+    }
 
+    .card:hover {
+      transform: scale(1.05); /* Scale up the card on hover */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+    }
+  </style>
 </head>
 
-<body class="home bg-gray-50">
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- Navbar placeholder -->
+  <!-- Navbar Placeholder -->
   <div id="navbar-placeholder"></div>
-
-  <!-- Load the navbar from external file -->
   <script>
     function loadNavbar() {
       fetch('navbar.html')
@@ -26,45 +39,119 @@
         });
     }
     document.addEventListener('DOMContentLoaded', loadNavbar);
-    
   </script>
 
-<!-- Hero Section with Video -->
-<section class="text-gray-600 body-font">
-    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
-         
-      <div class="text-center lg:w-2/3 w-full">
-        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-          	Investor Relations
-        </h1>
-        <div class="mb-8 leading-relaxed space-y-6 text-justify">
-            <p>The Company was incorporated in Singapore under the name of Huan Chew Oil Trading Pte Ltd on 24 December 1975. On 24 March 2001, it was converted into a public company and changed its name to AP Oil International Ltd.</p>
-            
-            <p>The Group is principally engaged in the manufacture of lubricating oils and fluids for industrial, automotive and marine applications. It is also engaged in the supply and trading of base oils and additives used in lubricant production.</p>
-            
-            <p>Through its subsidiary, AIM Chemical Industries (Pte) Ltd (AIM), the Group provides toll blending and contract manufacturing services for specialty chemicals. AIM also supplies and trades in chemicals.</p>
-            
-            <p>AP Oil was listed on the Singapore Stock Exchange in 2001 and upgraded to the Mainboard in 2003. Our Group is principally engaged in business of lubricants and specialty chemicals.</p>
-            
-            <p>The Group operates three manufacturing plants, two for manufacturing lubricants and one for manufacturing chemicals, in Singapore. One of its lubricant manufacturing plants has an oil terminal and a private jetty for loading and unloading of liquid cargo. The storage terminal and private jetty capable of berthing up to 15,000 tons of vessel was completed in March 2004.</p>
-            
+  <!-- Hero Section -->
+  <section class="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-center" style="background-image: url('Images/investor-relations.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="relative z-10 px-6 text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Investor Relations</h1>
+      <p class="text-lg md:text-xl">Our group spans borders—delivering excellence across continents and industries.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20 px-6 bg-blue-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-blue-900 mb-8">About AP Oil International</h2>
+      <div class="space-y-5 text-gray-700 text-justify leading-relaxed text-base">
+        <p>Incorporated in Singapore on 24 December 1975 under the name Huan Chew Oil Trading Pte Ltd, the company became a public entity in 2001 and was renamed AP Oil International Ltd.</p>
+        <p>We specialize in manufacturing lubricating oils and fluids for industrial, automotive, and marine use, while also trading base oils and additives.</p>
+        <p>Through AIM Chemical Industries (Pte) Ltd, our subsidiary, we offer toll blending and contract manufacturing for specialty chemicals, as well as chemical trading.</p>
+        <p>Listed on the Singapore Stock Exchange in 2001 and promoted to the Mainboard in 2003, AP Oil is recognized in the lubricants and specialty chemicals industry.</p>
+        <p>We operate three plants in Singapore, including a lubricant plant with its own oil terminal and private jetty capable of handling vessels up to 15,000 tons.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Operations Review -->
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-blue-900 mb-8">Operations Review</h2>
+      <p class="text-gray-700 text-justify leading-relaxed text-base">
+        AP Oil Group will celebrate a remarkable milestone – 50th anniversary in 2025. To mark this joyful occasion, the Group has made a one-off special donation of $500,000 to Nanyang Technological University in the last quarter of FY2024. This donation will support financially needy students under the University’s Enhanced Financial Aid Scheme, helping to empower the next generation of leaders and innovators. The Group is proud to contribute to a brighter future for students and to advancing education in our community.
+      </p>
+    </div>
+  </section>
+
+  <!-- Performance by Operating Segments -->
+  <section class="py-20 px-6 bg-blue-50" id="segments">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-blue-900 mb-12 text-center">Performance by Operating Segments</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        <!-- Manufacturing -->
+        <div>
+          <h3 class="text-xl font-semibold text-blue-800 mb-4">Manufacturing</h3>
+          <p class="text-gray-700 text-sm leading-relaxed mb-4">
+            In FY2024, manufacturing represented <strong>70%</strong> or <strong>$38.4 million</strong> (FY2023: 67% or $30.9 million) of the Group’s revenue. This includes the blending of lubricating oils and specialty chemicals.
+          </p>
+          <p class="text-gray-700 text-sm leading-relaxed mb-4">
+            The Group operates <strong>three blending plants</strong> — two wholly-owned in Singapore and one joint venture in Vietnam (AP Saigon Petro JSC), producing lubricants under its brands “AP Oil” and “SIN-O”.
+          </p>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            Specialty chemicals are manufactured by subsidiaries A.I.M. Chemical Industries Pte Ltd and GB Chemicals Pte Ltd.
+          </p>
         </div>
-        <div class="flex justify-center">
-          <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-          <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+
+        <!-- Trading -->
+        <div>
+          <h3 class="text-xl font-semibold text-blue-800 mb-4">Trading</h3>
+          <p class="text-gray-700 text-sm leading-relaxed">
+            The trading segment includes purchasing and selling raw materials (mainly base oils, chemicals, and finished goods). It contributed <strong>30%</strong> or <strong>$16.3 million</strong> of Group revenue in FY2024 (FY2023: 33% or $15.3 million).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance by Geographical Markets -->
+  <section class="py-20 px-6 bg-white" id="markets">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-blue-900 mb-12 text-center">Performance by Geographical Markets</h2>
+
+      <p class="text-gray-700 text-center mb-10 max-w-3xl mx-auto text-sm leading-relaxed">
+        AP Oil exports lubricants and specialty chemicals to over 20 countries. In FY2024, top markets included Singapore, South East Asia, the Middle East, East Asia, and the Indian Subcontinent.
+      </p>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+        <div class="bg-gray-100 p-6 rounded shadow card">
+          <h3 class="text-blue-800 font-bold text-lg mb-1">Singapore</h3>
+          <p class="text-gray-700 text-sm">63% or $34.4M (↑ $5.1M YoY)</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded shadow card">
+          <h3 class="text-blue-800 font-bold text-lg mb-1">South East Asia (Excl. SG)</h3>
+          <p class="text-gray-700 text-sm">13% or $7.1M</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded shadow card">
+          <h3 class="text-blue-800 font-bold text-lg mb-1">Middle East</h3>
+          <p class="text-gray-700 text-sm">10% or $5.3M</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded shadow card">
+          <h3 class="text-blue-800 font-bold text-lg mb-1">East Asia</h3>
+          <p class="text-gray-700 text-sm">8% or $4.4M</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded shadow card">
+          <h3 class="text-blue-800 font-bold text-lg mb-1">Indian Subcontinent</h3>
+          <p class="text-gray-700 text-sm">4% or $2.0M</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded shadow card">
+          <h3 class="text-blue-800 font-bold text-lg mb-1">Other Markets</h3>
+          <p class="text-gray-700 text-sm">2% or $1.5M</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-white bg-blue-900 body-font">
-    <div class="container mx-auto py-4 text-center">
-      <p>&copy; 2025 Your Company Name. All Rights Reserved.</p>
+  <footer class="bg-blue-900 text-white py-6">
+    <div class="container mx-auto text-center text-sm">
+      &copy; <span id="year"></span> AP Oil International Ltd. All Rights Reserved.
     </div>
   </footer>
 
-
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>

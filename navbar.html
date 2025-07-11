@@ -2,162 +2,131 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar with Scroll Effect</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Smooth transition for navbar changes */
-        #navbar {
-            transition: all 0.3s ease; /* Smooth padding/transform transition */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar Refined</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #navbar {
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+  </style>
 </head>
 
 <body class="bg-gray-100">
+  <header>
+    <nav id="navbar"
+      class="fixed top-0 left-0 w-full z-50 bg-white text-[#043858] py-4 border-b border-gray-200 transition-all duration-300">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <!-- Logo -->
+        <a href="index.html">
+          <img src="Images/logo1.png" alt="Logo" class="w-24 h-auto" />
+        </a>
 
-<header>
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 text-blue-900 py-4 transition-all duration-300 border-b-4 border-blue-500"
-        style="background-color: rgba(183, 255, 201, 0.459); border-color: #043858;">
-        <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo -->
-            <a href="index.html" class="text-2xl font-semibold hover:text-indigo-300">
-                <img src="Images/logo1.png" alt="Your Company Logo" class="w-20 h-10 " />
-            </a>
+        <!-- Desktop Menu -->
+        <ul class="hidden lg:flex space-x-6 items-center font-semibold text-lg">
+          <li><a href="index.html" class="hover:text-[#0f948a]">Home</a></li>
 
-            <!-- Desktop Menu -->
-            <ul class="hidden lg:flex space-x-6 items-center">
-                <li><a href="index.html" class="hover:text-[color:#0f948a] text-lg font-semibold">Home</a></li>
-                <!-- About Us Dropdown -->
-                <li class="relative group">
-                    <a href="#" class="hover:text-[color:#0f948a] text-lg inline-block px-2 py-2 font-semibold">About Us</a>
-                    <div class="absolute top-full left-0 hidden group-hover:block bg-white text-blue-900 rounded shadow-lg w-64 z-50">
-                        <a href="About.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our History</a>
-                        <a href="our-brand.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Brand</a>
-                        <a href="our-culture.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Culture</a>
-                        <a href="our-group.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Group</a>
-                        <a href="our-goals.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Goals</a>
-                    </div>
-                </li>
-
-                <!-- Products Dropdown -->
-                <li class="relative group">
-                    <a href="#" class="hover:text-[color:#0f948a] text-lg inline-block px-2 py-2 font-semibold">Products</a>
-                    <div class="absolute top-full left-0 hidden group-hover:block bg-white text-blue-900 rounded shadow-lg w-64 z-50">
-                        <a href="automotive-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Automotive Lubricants</a>
-                        <a href="industrial-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Industrial Lubricants</a>
-                        <a href="marine-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Marine Lubricants</a>
-                        <a href="grease.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Grease</a>
-                        <a href="industrial-specialty-oils.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Industrial Specialty Oils and Fluids</a>
-                    </div>
-                </li>
-
-                <!-- Investor Relations Dropdown -->
-                <li class="relative group">
-                    <a href="#" class="hover:text-[color:#0f948a] text-lg inline-block px-2 py-2 font-semibold">Investor Relations</a>
-                    <div class="absolute top-full left-0 hidden group-hover:block bg-white text-blue-900 rounded shadow-lg w-64 z-50">
-                        <a href="investors.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Investor Relations</a>
-                        <a href="BOD.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Board of Directors</a>
-                        <a href="Key exec.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Key Executives</a>
-                        <a href="annual-report.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Annual Reports</a>
-                    </div>
-                </li>
-                <li><a href="contact.html" class="hover:text-[color:#0f948a] text-lg font-semibold">Contact Us</a></li>
-            </ul>
-
-            <!-- Hamburger Menu -->
-            <div class="block lg:hidden">
-                <button id="navbar-toggle" class="text-white focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
+          <!-- About Us -->
+          <li class="relative group">
+            <a href="#" class="hover:text-[#0f948a] px-2 py-2">About Us</a>
+            <div
+              class="absolute top-full left-0 hidden group-hover:block bg-white text-[#043858] rounded shadow-md w-64 mt-2 border border-gray-200">
+              <a href="About.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Our History</a>
+              <a href="our-brand.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Our Brand</a>
+              <a href="our-culture.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Our Culture</a>
+              <a href="our-group.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Our Group</a>
+              <a href="our-goals.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Our Goals</a>
             </div>
+          </li>
+
+          <!-- Products -->
+          <li class="relative group">
+            <a href="#" class="hover:text-[#0f948a] px-2 py-2">Products</a>
+            <div
+              class="absolute top-full left-0 hidden group-hover:block bg-white text-[#043858] rounded shadow-md w-64 mt-2 border border-gray-200">
+              <a href="automotive-lubricants.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Automotive Lubricants</a>
+              <a href="industrial-lubricants.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Industrial Lubricants</a>
+              <a href="marine-lubricants.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Marine Lubricants</a>
+              <a href="grease.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Grease</a>
+              <a href="industrial-specialty-oils.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Specialty Oils & Fluids</a>
+            </div>
+          </li>
+
+          <!-- Investor Relations -->
+          <li class="relative group">
+            <a href="#" class="hover:text-[#0f948a] px-2 py-2">Investor Relations</a>
+            <div
+              class="absolute top-full left-0 hidden group-hover:block bg-white text-[#043858] rounded shadow-md w-64 mt-2 border border-gray-200">
+              <a href="investors.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Investor Relations</a>
+              <a href="message.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Chairman Message</a>
+              <a href="BOD.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Board of Directors</a>
+              <a href="Key exec.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Key Executives</a>
+              <a href="annual-report.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Annual Reports</a>
+            </div>
+          </li>
+
+          <li><a href="contact.html" class="hover:text-[#0f948a]">Contact Us</a></li>
+        </ul>
+
+        <!-- Mobile Menu Icon -->
+        <div class="block lg:hidden">
+          <button id="navbar-toggle" class="text-[#043858] focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
+      </div>
 
-        <!-- Mobile Menu -->
-        <div id="navbar-menu" class="lg:hidden bg-blue-900 text-white hidden">
-            <ul class="space-y-4 py-4">
-                <li><a href="index.html" class="block text-lg px-4 py-2 hover:bg-indigo-500">Home</a></li>
-                <!-- About Us Dropdown (Mobile) -->
-                <li>
-                    <button id="mobile-about-toggle" class="w-full text-left px-4 py-2 text-lg hover:bg-indigo-500 focus:outline-none">
-                        About Us
-                    </button>
-                    <div id="mobile-about-menu" class="hidden pl-4">
-                        <a href="our-brand.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Brand</a>
-                        <a href="our-culture.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Culture</a>
-                        <a href="our-history.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our History</a>
-                        <a href="our-group.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Group</a>
-                        <a href="our-goals.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Our Goals</a>
-                    </div>
-                </li>
-
-                <!-- Products Dropdown (Mobile) -->
-                <li>
-                    <button id="mobile-products-toggle" class="w-full text-left px-4 py-2 text-lg hover:bg-indigo-500 focus:outline-none">
-                        Products
-                    </button>
-                    <div id="mobile-products-menu" class="hidden pl-4">
-                        <a href="automotive-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Automotive Lubricants</a>
-                        <a href="industrial-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Industrial Lubricants</a>
-                        <a href="marine-lubricants.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Marine Lubricants</a>
-                        <a href="grease.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Grease</a>
-                        <a href="industrial-specialty-oils.html" class="block px-4 py-2 text-sm hover:bg-blue-100">Industrial Specialty Oils and Fluids</a>
-                    </div>
-                </li>
-
-                <li><a href="investors.html" class="block text-lg px-4 py-2 hover:bg-indigo-500">Investor Relations</a></li>
-                <li><a href="contact.html" class="block text-lg px-4 py-2 hover:bg-indigo-500">Contact Us</a></li>
-            </ul>
-        </div>
+      <!-- Mobile Menu -->
+      <div id="navbar-menu" class="lg:hidden hidden bg-white text-[#043858] font-medium">
+        <ul class="py-4 px-4 space-y-2">
+          <li><a href="index.html" class="block hover:text-[#0f948a]">Home</a></li>
+          <li><a href="About.html" class="block hover:text-[#0f948a]">Our History</a></li>
+          <li><a href="our-brand.html" class="block hover:text-[#0f948a]">Our Brand</a></li>
+          <li><a href="our-culture.html" class="block hover:text-[#0f948a]">Our Culture</a></li>
+          <li><a href="our-group.html" class="block hover:text-[#0f948a]">Our Group</a></li>
+          <li><a href="our-goals.html" class="block hover:text-[#0f948a]">Our Goals</a></li>
+          <li><a href="automotive-lubricants.html" class="block hover:text-[#0f948a]">Automotive Lubricants</a></li>
+          <li><a href="industrial-lubricants.html" class="block hover:text-[#0f948a]">Industrial Lubricants</a></li>
+          <li><a href="marine-lubricants.html" class="block hover:text-[#0f948a]">Marine Lubricants</a></li>
+          <li><a href="grease.html" class="block hover:text-[#0f948a]">Grease</a></li>
+          <li><a href="industrial-specialty-oils.html" class="block hover:text-[#0f948a]">Specialty Oils & Fluids</a></li>
+          <li><a href="investors.html" class="block hover:text-[#0f948a]">Investor Relations</a></li>
+          <li><a href="BOD.html" class="block hover:text-[#0f948a]">Board of Directors</a></li>
+          <li><a href="Key exec.html" class="block hover:text-[#0f948a]">Key Executives</a></li>
+          <li><a href="annual-report.html" class="block hover:text-[#0f948a]">Annual Reports</a></li>
+          <li><a href="contact.html" class="block hover:text-[#0f948a]">Contact Us</a></li>
+        </ul>
+      </div>
     </nav>
-</header>
+  </header>
 
-<script>
-    // Mobile menu toggle
-    const navbarToggle = document.getElementById('navbar-toggle');
-    const navbarMenu = document.getElementById('navbar-menu');
-    navbarToggle.addEventListener('click', () => {
-        navbarMenu.classList.toggle('hidden');
+  <script>
+    const toggle = document.getElementById('navbar-toggle');
+    const menu = document.getElementById('navbar-menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
     });
 
-    // Mobile "About Us" dropdown toggle
-    const mobileAboutToggle = document.getElementById('mobile-about-toggle');
-    const mobileAboutMenu = document.getElementById('mobile-about-menu');
-    mobileAboutToggle.addEventListener('click', () => {
-        mobileAboutMenu.classList.toggle('hidden');
-    });
-
-    // Mobile "Products" dropdown toggle
-    const mobileProductsToggle = document.getElementById('mobile-products-toggle');
-    const mobileProductsMenu = document.getElementById('mobile-products-menu');
-    mobileProductsToggle.addEventListener('click', () => {
-        mobileProductsMenu.classList.toggle('hidden');
-    });
-
-    // Scroll effect for navbar
+    // Scroll shrink effect
     const navbar = document.getElementById('navbar');
     let lastScrollTop = 0;
-
     window.addEventListener('scroll', function () {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-        // Shrink navbar when scrolling down
-        if (currentScroll > lastScrollTop && currentScroll > 10) {
-            navbar.classList.add('py-2'); // Add small padding to shrink
-            navbar.classList.remove('py-4'); // Remove larger padding
-        } else if (currentScroll === 0) {
-            // Restore navbar size at top
-            navbar.classList.add('py-4');
-            navbar.classList.remove('py-2');
-        }
-
-        // Update the last scroll position
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll > lastScrollTop && currentScroll > 10) {
+        navbar.classList.add('py-2');
+        navbar.classList.remove('py-4');
+      } else if (currentScroll === 0) {
+        navbar.classList.add('py-4');
+        navbar.classList.remove('py-2');
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
-</script>
-
+  </script>
 </body>
 
-</html> 
+</html>

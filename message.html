@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chairman Message | AP Oil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+            /* Add this custom hover effect to your card */
+        .card {
+      transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+    }
+
+    .card:hover {
+      transform: scale(1.05); /* Scale up the card on hover */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+  <script>
+    function loadNavbar() {
+      fetch('navbar.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+          console.error('Error loading navbar:', error);
+        });
+    }
+    document.addEventListener('DOMContentLoaded', loadNavbar);
+  </script>
+
+  <!-- Hero Section -->
+  <section class="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-center" style="background-image: url('Images/chairman-message.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  </section>
+  <!-- Main Section with Slider on the Left and Blog Block on the Right -->
+  <div class="flex pb-12 pt-8 max-w-7xl ml-40">
+    <!-- Image Slider Section (Left side) -->
+<div class="slider-container w-4/5 h-[320px] flex justify-center items-center">
+  <img src="Images/Dr Ho.jpg" class="slider-image opacity-100 object-cover w-48 h-48 rounded-lg" />
+</div>
+
+
+    <!-- Blog Block Section (Right side) -->
+    <div class="md:w-6/6 flex flex-col items-start pl-20">
+      <h2 class="sm:text-4xl text-4xl title-font font-extrabold text-blue-900 mt-2 mb-6">	
+Dear Shareholders, Business Partners and Friends,</h2>
+      <p class="leading-relaxed mb-8">
+        The geopolitical landscape remained volatile in 2024. The Russia-Ukraine conflict and war in the Middle East disrupted the global economic order. International trading activities faced significant obstacles, while inflationary pressures continued to rise worldwide. Despite these external challenges, Singapore as well as our AP Oil Group demonstrated extraordinary resilience over the past year.
+       </p>
+
+        <p class="leading-relaxed mb-8">
+        Singapore’s economic growth surged from 1.1% in 2023 to 4.4% in 2024, underscoring the nation’s robust adaptability. Our Group achieved an 18% increase in total revenue, a 27% rise in gross profit, and a staggering 293% growth in net profit after tax compared to the previous year.
+       </p>
+
+        <p class="leading-relaxed mb-8">
+        Our two wholly-owned chemical subsidiaries, as well as joint ventures in Ho Chi Minh City, Vietnam, and Chongqing, China, all delivered healthy profits. As part of our long-term strategy to deepen our presence in China’s lubricant market, our subsidiary AP Chongqing commenced construction of a lubricating oil blending plant in Banan District, Chongqing, in December 2024. The facility is scheduled for completion in the first quarter of 2025 and operational by the second quarter, further enhancing our market competitiveness.
+       </p>
+
+        <p class="leading-relaxed mb-8">
+        Looking ahead to 2025, the global business climate remains cloudy and murky. Unilateral sanctions and escalating tariff wars continue to disrupt economic growth worldwide, posing significant challenges to Singapore’s trade-dependent economy and our Group’s business operations. We will remain agile in responding to evolving circumstances while striving to identify new business opportunities amid crises. Concurrently, the Group will adjust its short to medium-term business plans and strategies accordingly.
+       </p>
+
+         <p class="leading-relaxed mb-8">
+        As the saying goes, “He who has ample provisions in hand, does not panic”. Our healthy balance sheet provides confidence and a solid foundation to navigate adversity. The management will continue to uphold a cautiously optimistic approach, ensuring the Group remains resilient in the face of a turbulent business environment.
+       </p>
+
+        <p class="leading-relaxed mb-8">
+        Finally, I am pleased to announce that the Board has proposed a dividend of 0.5 cents per share for 2024 in recognition of our shareholders’ long-standing support. We remain committed to creating sustained value for shareholders and building an even stronger foundation for the Group’s long-term growth.
+       </p>
+
+        <p class="leading-relaxed mb-8">
+        Thank you, and best wishes to all!       
+    </p>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-6">
+    <div class="container mx-auto text-center text-sm">
+      &copy; <span id="year"></span> AP Oil International Ltd. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
