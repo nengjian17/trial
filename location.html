@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Locate Us - Offices & Subsidiaries</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 40px 20px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h2, h3.section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+
+    h3.section-title {
+      color: #0056b3;
+      border-bottom: 2px solid #0056b3;
+      display: inline-block;
+      padding-bottom: 8px;
+      margin: 0 auto 30px auto;
+    }
+
+    .office-section {
+      max-width: 100%;
+      margin: 0 auto 60px auto;
+      padding: 0 200px;
+    }
+
+    .offices-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .office-card {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      transition: all 0.3s ease-in-out;
+      border: 1px solid #e0e0e0;
+    }
+
+    .office-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .office-image {
+      width: 350px;
+      height: 250px;
+      object-fit: cover;
+      border-right: 3px solid #0056b3;
+      background-color: #f9f9f9;
+    }
+
+    .office-content {
+      padding: 20px 25px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .office-content h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #004080;
+      font-size: 1.1rem;
+    }
+
+    .office-content p {
+      margin: 5px 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .office-content a {
+      color: #0073e6;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .office-content a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .office-card {
+        flex-direction: column;
+      }
+
+      .office-image {
+        width: 100%;
+        height: 200px;
+        border-right: none;
+        border-bottom: 3px solid #0056b3;
+      }
+
+      .office-content {
+        padding: 15px 20px;
+      }
+    }
+
+    footer {
+      background-color: #003366;
+      color: #fff;
+      text-align: center;
+      padding: 16px 0;
+      margin-top: 60px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    #singapore-subsidiaries .offices-grid {
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared Navbar -->
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        const placeholder = document.getElementById('navbar-placeholder');
+        placeholder.innerHTML = data;
+        const scripts = placeholder.querySelectorAll('script');
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          document.body.appendChild(newScript);
+        });
+      })
+      .catch(error => {
+        console.error('❌ Failed to load navbar:', error);
+      });
+  </script>
+
+  <!-- Singapore Offices -->
+  <section class="office-section pt-20" id="singapore-offices">
+    <h3 class="section-title">Singapore Offices</h3>
+    <div class="offices-grid">
+      <div class="office-card">
+        <img src="Images/AP Oil International.png" alt="AP Oil Singapore Office 1" class="office-image" />
+        <div class="office-content">
+          <h4>AP Oil International Limited</h4>
+          <p><strong>Address:</strong><br>18, Pioneer Sector 1, Jurong<br>Singapore 628428</p>
+          <p><strong>Tel:</strong> +65 6861 5503</p>
+          <p><strong>Fax:</strong> +65 6861 9162</p>
+          <p><strong>Email:</strong> <a href="mailto:enquiry@apoil.com.sg">enquiry@apoil.com.sg</a></p>
+          <p><strong>Website:</strong> <a href="https://www.apoil.com.sg" target="_blank" rel="noopener">www.apoil.com.sg</a></p>
+        </div>
+      </div>
+
+      <div class="office-card">
+        <img src="Images/AP OIL PTE LTD.jpg" alt="AP Oil Singapore Office 2" class="office-image" />
+        <div class="office-content">
+          <h4>AP Oil Pte Ltd</h4>
+          <p><strong>Address:</strong><br>30, Gul Crescent, Jurong<br>Singapore 629535</p>
+          <p><strong>Tel:</strong> +65 6861 5503</p>
+          <p><strong>Fax:</strong> +65 6861 9162</p>
+          <p><strong>Email:</strong> <a href="mailto:enquiry@apoil.com.sg">enquiry@apoil.com.sg</a></p>
+          <p><strong>Website:</strong> <a href="https://www.apoil.com.sg" target="_blank" rel="noopener">www.apoil.com.sg</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Singapore Subsidiaries -->
+  <section class="office-section" id="singapore-subsidiaries">
+    <h3 class="section-title">Singapore Subsidiaries</h3>
+    <div class="offices-grid">
+      <div class="office-card">
+        <img src="Images/AP Oil International.png" alt="Alpha Pacific Petroleum" class="office-image" />
+        <div class="office-content">
+          <h4>Alpha Pacific Petroleum (S) Pte Ltd</h4>
+          <p><strong>Address:</strong><br>18 Pioneer Sector 1, Jurong,<br>Singapore 628428</p>
+          <p><strong>Tel:</strong> +65 6861 5503</p>
+          <p><strong>Fax:</strong> +65 6861 9162</p>
+          <p><strong>Email:</strong> <a href="mailto:enquiry@apoil.com.sg">enquiry@apoil.com.sg</a></p>
+          <p><strong>Website:</strong> <a href="https://www.apoil.com.sg" target="_blank" rel="noopener">www.apoil.com.sg</a></p>
+        </div>
+      </div>
+
+      <div class="office-card">
+        <img src="Images/AIM.jpg" alt="AIM Chemical" class="office-image" />
+        <div class="office-content">
+          <h4>A.I.M. Chemical Industries Pte Ltd</h4>
+          <p><strong>Address:</strong><br>19 Tractor Road, Jurong,<br>Singapore 627977</p>
+          <p><strong>Tel:</strong> +65 6265 4700</p>
+          <p><strong>Fax:</strong> +65 6266 5082</p>
+          <p><strong>Email:</strong> <a href="mailto:enquiry@aimchem.com.sg">enquiry@aimchem.com.sg</a></p>
+          <p><strong>Website:</strong> <a href="https://www.aimchem.com.sg" target="_blank" rel="noopener">www.aimchem.com.sg</a></p>
+        </div>
+      </div>
+
+      <div class="office-card">
+        <img src="Images/placeholder.jpg" alt="GB Chemicals" class="office-image" onerror="this.src='https://via.placeholder.com/160'" />
+        <div class="office-content">
+          <h4>GB Chemicals Pte Ltd</h4>
+          <p><strong>Address:</strong><br>17C Tuas Road,<br>Singapore 637816</p>
+          <p><strong>Tel:</strong> +65 6863 0220</p>
+          <p><strong>Fax:</strong> +65 6863 0200</p>
+          <p><strong>Email:</strong> <a href="mailto:enquiry@gbchemicals.com.sg">enquiry@gbchemicals.com.sg</a></p>
+          <p><strong>Website:</strong> <a href="https://www.gbchemicals.com.sg" target="_blank" rel="noopener">www.gbchemicals.com.sg</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overseas Offices -->
+  <section class="office-section" id="overseas-offices">
+    <h3 class="section-title">Overseas Offices</h3>
+    <div class="offices-grid">
+      <div class="office-card">
+        <img src="Images/APSP.jpg" alt="Vietnam Office" class="office-image" />
+        <div class="office-content">
+          <h4>AP Saigon Petro JSC</h4>
+          <p><strong>Address:</strong><br>1st Floor, 6B Ton Duc Thang Street, Ben Nghe Ward,<br>District 1, Ho Chi Minh City, Vietnam.</p>
+          <p><strong>Tel:</strong> +848-38224848</p>
+          <p><strong>Fax:</strong> +848-38243959</p>
+          <p><strong>Website:</strong> <a href="https://www.apsaigonpetro.com" target="_blank" rel="noopener">www.apsaigonpetro.com</a></p>
+        </div>
+      </div>
+
+      <div class="office-card">
+        <img src="Images/AP Shanghai.png" alt="China Office" class="office-image" />
+        <div class="office-content">
+          <h4>AP Oil Singapore (Shanghai) Limited</h4>
+          <p><strong>Address:</strong><br>Room 2102 East Tower, BHC Business Center,<br>2218 Hunan Road, Shanghai, 201204, China.</p>
+          <p><strong>Tel:</strong> +86 021 6892 2202</p>
+          <p><strong>Fax:</strong> +86 021 6892 2210</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; AP Oil International Ltd. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
